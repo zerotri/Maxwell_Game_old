@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="GameAnimation.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="233" topLine="27" />
+	</File>
+	<File name="GameAnimation.h" open="0" top="0" tabpos="2">
+		<Cursor position="557" topLine="3" />
+	</File>
+	<File name="GameModel.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="522" topLine="16" />
+	</File>
+	<File name="GameModel.h" open="0" top="0" tabpos="6">
+		<Cursor position="40" topLine="0" />
+	</File>
+	<File name="GameWorld.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="275" topLine="0" />
+	</File>
+	<File name="Input.cpp" open="1" top="1" tabpos="2">
+		<Cursor position="508" topLine="32" />
+	</File>
+	<File name="Input.h" open="0" top="0" tabpos="0">
+		<Cursor position="1022" topLine="7" />
+	</File>
+	<File name="LuaVM.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="333" topLine="50" />
+	</File>
+	<File name="LuaVM.h" open="0" top="0" tabpos="0">
+		<Cursor position="573" topLine="10" />
+	</File>
+	<File name="build\__game.lua" open="0" top="0" tabpos="2">
+		<Cursor position="143" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="159" topLine="6" />
+	</File>
+	<File name="main.h" open="0" top="0" tabpos="3">
+		<Cursor position="342" topLine="2" />
+	</File>
+	<File name="mapnodes.h" open="0" top="0" tabpos="0">
+		<Cursor position="1133" topLine="32" />
+	</File>
+	<File name="system.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="2663" topLine="69" />
+	</File>
+	<File name="system.h" open="0" top="0" tabpos="0">
+		<Cursor position="441" topLine="16" />
+	</File>
+	<File name="utils.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="1254" topLine="11" />
+	</File>
+	<File name="utils.h" open="0" top="0" tabpos="4">
+		<Cursor position="425" topLine="0" />
+	</File>
+	<File name="xmlParser.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="24" />
+	</File>
+</CodeBlocks_layout_file>

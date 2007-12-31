@@ -1,0 +1,27 @@
+Application Name is: 'PGA Engine'
+
+App Name:PGA Engine
+AddPoint(0,1077936128)
+AddPoint(0,1078984704)
+AddPoint(0,1078984704)
+AddPoint(0,1077936128)
+HGE Started..
+
+HGE version: 1.70
+Date: 31.12.2007, 01:11:03
+
+Application: Pegasus' Great Adventure - Test Demos
+OS: Windows 5.1.2600
+Memory: 768816K total, 228688K free
+
+D3D Driver: ialmrnt5.dll
+Description: Intel(R) 82852/82855 GM/GME Graphics Controller
+Version: 6.14.10.3722
+Can't find appropriate full screen video mode
+Mode: 320 x 240 x UNKNOWN
+
+Init done.
+
+
+Finishing..
+The End.

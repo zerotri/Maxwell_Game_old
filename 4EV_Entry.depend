@@ -1,0 +1,156 @@
+# depslib dependency file v1.0
+1198996428 source:c:\dev\projects\4ev_entry\main.cpp
+	<hge.h>
+	<hgecolor.h>
+	<hgefont.h>
+	"chipmunk/chipmunk.h"
+	"main.h"
+
+1179891380 c:\dev\sdk\graphics\hge\1.7\include\hge.h
+	<windows.h>
+
+1176932886 c:\dev\sdk\graphics\hge\1.7\include\hgecolor.h
+	"hge.h"
+
+1177538340 c:\dev\sdk\graphics\hge\1.7\include\hgefont.h
+	"hge.h"
+	"hgesprite.h"
+
+1177631746 c:\dev\sdk\graphics\hge\1.7\include\hgesprite.h
+	"hge.h"
+	"hgerect.h"
+
+1176932886 c:\dev\sdk\graphics\hge\1.7\include\hgerect.h
+
+1198110500 source:c:\dev\projects\4ev_entry\vector.cpp
+	"vector.h"
+	<math.h>
+
+1198115137 c:\dev\projects\4ev_entry\vector.h
+	<math.h>
+
+1198991366 c:\dev\projects\4ev_entry\main.h
+	<hgecolor.h>
+	"vector.h"
+	"lua_utils.h"
+	"LuaVM.h"
+	"Input.h"
+	"GameAnimation.h"
+	"GameWorld.h"
+	"GameModel.h"
+	"utils.h"
+	<lua.h>
+	"lualib.h"
+	"lauxlib.h"
+
+1198366892 c:\dev\projects\4ev_entry\lua_utils.h
+
+1198366888 source:c:\dev\projects\4ev_entry\lua_utils.cpp
+
+1198370546 c:\dev\projects\4ev_entry\luavm.h
+	<vector>
+	<string>
+	<lua.h>
+	"lualib.h"
+	"lauxlib.h"
+
+1198371689 source:c:\dev\projects\4ev_entry\luavm.cpp
+	"LuaVM.h"
+
+1198397656 c:\dev\projects\4ev_entry\chipmunk\chipmunk.h
+	"cpVect.h"
+	"cpBB.h"
+	"cpBody.h"
+	"cpArray.h"
+	"cpHashSet.h"
+	"cpSpaceHash.h"
+	"cpShape.h"
+	"cpPolyShape.h"
+	"cpArbiter.h"
+	"cpCollision.h"
+	"cpJoint.h"
+	"cpSpace.h"
+
+1174433302 c:\dev\projects\4ev_entry\chipmunk\cpvect.h
+
+1198396204 c:\dev\projects\4ev_entry\chipmunk\cpbb.h
+
+1174433302 c:\dev\projects\4ev_entry\chipmunk\cpbody.h
+
+1174433302 c:\dev\projects\4ev_entry\chipmunk\cparray.h
+
+1174433302 c:\dev\projects\4ev_entry\chipmunk\cphashset.h
+
+1174433302 c:\dev\projects\4ev_entry\chipmunk\cpspacehash.h
+
+1174433302 c:\dev\projects\4ev_entry\chipmunk\cpshape.h
+
+1174433302 c:\dev\projects\4ev_entry\chipmunk\cppolyshape.h
+
+1174433302 c:\dev\projects\4ev_entry\chipmunk\cparbiter.h
+
+1174433302 c:\dev\projects\4ev_entry\chipmunk\cpcollision.h
+
+1174433302 c:\dev\projects\4ev_entry\chipmunk\cpjoint.h
+
+1174433302 c:\dev\projects\4ev_entry\chipmunk\cpspace.h
+
+1198401460 source:c:\dev\projects\4ev_entry\gameworld.cpp
+	"GameWorld.h"
+
+1198401502 c:\dev\projects\4ev_entry\gameworld.h
+	"GameModel.h"
+	"chipmunk/chipmunk.h"
+
+1198736949 c:\dev\projects\4ev_entry\gamemodel.h
+	"chipmunk/chipmunk.h"
+	"xmlParser.h"
+
+1192134018 c:\dev\projects\4ev_entry\xmlparser.h
+	<stdlib.h>
+	<tchar.h>
+	<wchar.h>
+
+1198743632 source:c:\dev\projects\4ev_entry\gamemodel.cpp
+	"GameModel.h"
+	<string.h>
+	<hge.h>
+
+1192134014 source:c:\dev\projects\4ev_entry\xmlparser.cpp
+	"xmlParser.h"
+	<Windows.h>
+	<memory.h>
+	<assert.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<widec.h>
+
+1198517724 c:\dev\projects\4ev_entry\gameanimation.h
+	<hge.h>
+
+1198836136 c:\dev\projects\4ev_entry\utils.h
+	<hge.h>
+
+1198737561 source:c:\dev\projects\4ev_entry\gameanimation.cpp
+	"GameAnimation.h"
+	"utils.h"
+
+1199004014 source:c:\dev\projects\4ev_entry\input.cpp
+	"Input.h"
+
+1198992127 c:\dev\projects\4ev_entry\input.h
+	<hge.h>
+	<vector>
+
+1198971329 source:c:\dev\projects\4ev_entry\utils.cpp
+	"utils.h"
+	<hgecolor.h>
+
+1198988150 source:c:\dev\projects\4ev_entry\system.cpp
+	"system.h"
+
+1198987721 c:\dev\projects\4ev_entry\system.h
+	<windows.h>
+	<gl/gl.h>
+
