@@ -1,18 +1,11 @@
-Application Name is: 'PGA Engine'
-
-App Name:PGA Engine
-AddPoint(0,1077936128)
-AddPoint(0,1078984704)
-AddPoint(0,1078984704)
-AddPoint(0,1077936128)
 HGE Started..
 
 HGE version: 1.70
-Date: 31.12.2007, 01:11:03
+Date: 31.12.2007, 03:06:43
 
 Application: Pegasus' Great Adventure - Test Demos
 OS: Windows 5.1.2600
-Memory: 768816K total, 228688K free
+Memory: 768816K total, 284936K free
 
 D3D Driver: ialmrnt5.dll
 Description: Intel(R) 82852/82855 GM/GME Graphics Controller

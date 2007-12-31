@@ -154,3 +154,195 @@
 	<windows.h>
 	<gl/gl.h>
 
+1198737561 source:c:\dev\projects\4ev_entry\src\gameanimation.cpp
+	"GameAnimation.h"
+	"utils.h"
+
+1198517724 c:\dev\projects\4ev_entry\include\gameanimation.h
+	<hge.h>
+
+1198836136 c:\dev\projects\4ev_entry\include\utils.h
+	<hge.h>
+
+1199092866 source:c:\dev\projects\4ev_entry\src\gameentity.cpp
+	"GameEntity.h"
+
+1199098205 c:\dev\projects\4ev_entry\include\gameentity.h
+	<vector.h>
+
+1199099187 source:c:\dev\projects\4ev_entry\src\gameworld.cpp
+
+1199099180 c:\dev\projects\4ev_entry\include\gameworld.h
+
+1198736949 c:\dev\projects\4ev_entry\include\gamemodel.h
+	"chipmunk/chipmunk.h"
+	"xmlParser.h"
+
+1198397656 c:\dev\projects\4ev_entry\include\chipmunk\chipmunk.h
+	"cpVect.h"
+	"cpBB.h"
+	"cpBody.h"
+	"cpArray.h"
+	"cpHashSet.h"
+	"cpSpaceHash.h"
+	"cpShape.h"
+	"cpPolyShape.h"
+	"cpArbiter.h"
+	"cpCollision.h"
+	"cpJoint.h"
+	"cpSpace.h"
+
+1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cpvect.h
+
+1198396204 c:\dev\projects\4ev_entry\include\chipmunk\cpbb.h
+
+1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cpbody.h
+
+1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cparray.h
+
+1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cphashset.h
+
+1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cpspacehash.h
+
+1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cpshape.h
+
+1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cppolyshape.h
+
+1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cparbiter.h
+
+1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cpcollision.h
+
+1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cpjoint.h
+
+1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cpspace.h
+
+1192134018 c:\dev\projects\4ev_entry\include\xmlparser.h
+	<stdlib.h>
+	<tchar.h>
+	<wchar.h>
+
+1199004014 source:c:\dev\projects\4ev_entry\src\input.cpp
+	"Input.h"
+
+1198992127 c:\dev\projects\4ev_entry\include\input.h
+	<hge.h>
+	<vector>
+
+1198371689 source:c:\dev\projects\4ev_entry\src\luavm.cpp
+	"LuaVM.h"
+
+1198370546 c:\dev\projects\4ev_entry\include\luavm.h
+	<vector>
+	<string>
+	<lua.h>
+	"lualib.h"
+	"lauxlib.h"
+
+1198366888 source:c:\dev\projects\4ev_entry\src\lua_utils.cpp
+
+1198971329 source:c:\dev\projects\4ev_entry\src\utils.cpp
+	"utils.h"
+	<hgecolor.h>
+
+1198110500 source:c:\dev\projects\4ev_entry\src\vector.cpp
+	"vector.h"
+	<math.h>
+
+1198115137 c:\dev\projects\4ev_entry\include\vector.h
+	<math.h>
+
+1192134014 source:c:\dev\projects\4ev_entry\src\xmlparser.cpp
+	"xmlParser.h"
+	<Windows.h>
+	<memory.h>
+	<assert.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<widec.h>
+
+1192134010 source:c:\dev\projects\4ev_entry\src\xmltest.cpp
+	<stdio.h>
+	"xmlParser.h"
+
+1179891380 c:\dev\projects\4ev_entry\include\hge\hge.h
+	<windows.h>
+
+1199096607 source:c:\dev\projects\4ev_entry\src\gamemodel.cpp
+	"GameModel.h"
+	<string.h>
+	<hge.h>
+
+1197793383 c:\dev\projects\4ev_entry\include\lua\lua.h
+	<stdarg.h>
+	<stddef.h>
+
+1197793383 c:\dev\projects\4ev_entry\include\lua\lualib.h
+	"lua.h"
+
+1197793383 c:\dev\projects\4ev_entry\include\lua\lauxlib.h
+	<stddef.h>
+	<stdio.h>
+	"lua.h"
+
+1176932886 c:\dev\projects\4ev_entry\include\hge\hgecolor.h
+	"hge.h"
+
+1197793414 c:\dev\projects\4ev_entry\include\lualink.h
+
+1199101453 source:c:\dev\projects\4ev_entry\src\main.cpp
+	<hge.h>
+	<hgecolor.h>
+	<hgefont.h>
+	<hgegui.h>
+	"chipmunk/chipmunk.h"
+	"main.h"
+
+1177538340 c:\dev\projects\4ev_entry\include\hge\hgefont.h
+	"hge.h"
+	"hgesprite.h"
+
+1177631746 c:\dev\projects\4ev_entry\include\hge\hgesprite.h
+	"hge.h"
+	"hgerect.h"
+
+1176932886 c:\dev\projects\4ev_entry\include\hge\hgerect.h
+
+1179891380 c:\dev\projects\4ev_entry\include\hge\hgegui.h
+	"hge.h"
+	"hgesprite.h"
+	"hgerect.h"
+
+1199099116 c:\dev\projects\4ev_entry\include\main.h
+	<hgecolor.h>
+	"vector.h"
+	"lua_utils.h"
+	"LuaVM.h"
+	"Input.h"
+	"System.h"
+	"GameAnimation.h"
+	"GameWorld.h"
+	"utils.h"
+	<lua.h>
+	"lualib.h"
+	"lauxlib.h"
+
+1198366892 c:\dev\projects\4ev_entry\include\lua_utils.h
+
+1199102149 source:c:\dev\projects\4ev_entry\src\system.cpp
+	"System.h"
+
+1199102156 c:\dev\projects\4ev_entry\include\system.h
+	<hge.h>
+	<stdarg.h>
+	<stdio.h>
+	"ResourceManager.h"
+
+1199101330 c:\dev\projects\4ev_entry\include\resourcemanager.h
+	<hge.h>
+	<map>
+	<string>
+
+1199101617 source:c:\dev\projects\4ev_entry\src\resourcemanager.cpp
+	"ResourceManager.h"
+

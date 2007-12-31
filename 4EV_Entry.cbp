@@ -32,40 +32,43 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="C:\dev\sdk\Graphics\HGE\1.7\include" />
+			<Add directory="include" />
+			<Add directory="include\hge" />
+			<Add directory="include\allegro" />
+			<Add directory="include\lua" />
+			<Add directory="include\chipmunk" />
 		</Compiler>
 		<Linker>
-			<Add library="hge" />
-			<Add library="hgehelp" />
-			<Add library="C:\dev\CodeBlocks\devpaks\lib\liblua.a" />
-			<Add library="C:\dev\CodeBlocks\devpaks\lib\liblualib.a" />
-			<Add library="lib\libchipmunk_d.a" />
-			<Add library="lib\xmlParser.lib" />
-			<Add directory="C:\dev\sdk\Graphics\HGE\1.7\lib\gcc" />
+			<Add library="lib\libhgehelp.a" />
+			<Add library="lib\libhge.a" />
+			<Add library="lib\liblualib.a" />
+			<Add library="lib\libChipmunk_d.a" />
+			<Add library="lib\liblua.a" />
+			<Add directory="lib" />
 		</Linker>
-		<Unit filename="GameAnimation.cpp" />
-		<Unit filename="GameAnimation.h" />
-		<Unit filename="GameModel.cpp" />
-		<Unit filename="GameModel.h" />
-		<Unit filename="GameWorld.cpp" />
-		<Unit filename="GameWorld.h" />
-		<Unit filename="Input.cpp" />
-		<Unit filename="Input.h" />
-		<Unit filename="LuaVM.cpp" />
-		<Unit filename="LuaVM.h" />
-		<Unit filename="build\__game.lua" />
-		<Unit filename="main.cpp" />
-		<Unit filename="main.h" />
-		<Unit filename="mapnodes.h" />
-		<Unit filename="system.cpp">
-			<Option compile="0" />
-			<Option link="0" />
-		</Unit>
-		<Unit filename="system.h" />
-		<Unit filename="utils.cpp" />
-		<Unit filename="utils.h" />
-		<Unit filename="vector.cpp" />
-		<Unit filename="xmlParser.cpp" />
+		<Unit filename="include\GameAnimation.h" />
+		<Unit filename="include\GameEntity.h" />
+		<Unit filename="include\GameWorld.h" />
+		<Unit filename="include\Input.h" />
+		<Unit filename="include\LuaVM.h" />
+		<Unit filename="include\ResourceManager.h" />
+		<Unit filename="include\System.h" />
+		<Unit filename="include\lua_utils.h" />
+		<Unit filename="include\main.h" />
+		<Unit filename="include\mapnodes.h" />
+		<Unit filename="include\utils.h" />
+		<Unit filename="include\vector.h" />
+		<Unit filename="src\GameAnimation.cpp" />
+		<Unit filename="src\GameEntity.cpp" />
+		<Unit filename="src\GameWorld.cpp" />
+		<Unit filename="src\Input.cpp" />
+		<Unit filename="src\LuaVM.cpp" />
+		<Unit filename="src\ResourceManager.cpp" />
+		<Unit filename="src\System.cpp" />
+		<Unit filename="src\lua_utils.cpp" />
+		<Unit filename="src\main.cpp" />
+		<Unit filename="src\utils.cpp" />
+		<Unit filename="src\vector.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
