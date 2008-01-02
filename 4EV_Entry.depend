@@ -154,7 +154,7 @@
 	<windows.h>
 	<gl/gl.h>
 
-1198737561 source:c:\dev\projects\4ev_entry\src\gameanimation.cpp
+1199264327 source:c:\dev\projects\4ev_entry\src\gameanimation.cpp
 	"GameAnimation.h"
 	"utils.h"
 
@@ -192,29 +192,29 @@
 	"cpJoint.h"
 	"cpSpace.h"
 
-1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cpvect.h
+1174429702 c:\dev\projects\4ev_entry\include\chipmunk\cpvect.h
 
 1198396204 c:\dev\projects\4ev_entry\include\chipmunk\cpbb.h
 
-1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cpbody.h
+1174429702 c:\dev\projects\4ev_entry\include\chipmunk\cpbody.h
 
-1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cparray.h
+1174429702 c:\dev\projects\4ev_entry\include\chipmunk\cparray.h
 
-1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cphashset.h
+1174429702 c:\dev\projects\4ev_entry\include\chipmunk\cphashset.h
 
-1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cpspacehash.h
+1174429702 c:\dev\projects\4ev_entry\include\chipmunk\cpspacehash.h
 
-1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cpshape.h
+1174429702 c:\dev\projects\4ev_entry\include\chipmunk\cpshape.h
 
-1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cppolyshape.h
+1174429702 c:\dev\projects\4ev_entry\include\chipmunk\cppolyshape.h
 
-1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cparbiter.h
+1174429702 c:\dev\projects\4ev_entry\include\chipmunk\cparbiter.h
 
-1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cpcollision.h
+1174429702 c:\dev\projects\4ev_entry\include\chipmunk\cpcollision.h
 
-1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cpjoint.h
+1174429702 c:\dev\projects\4ev_entry\include\chipmunk\cpjoint.h
 
-1174433302 c:\dev\projects\4ev_entry\include\chipmunk\cpspace.h
+1174429702 c:\dev\projects\4ev_entry\include\chipmunk\cpspace.h
 
 1192134018 c:\dev\projects\4ev_entry\include\xmlparser.h
 	<stdlib.h>
@@ -240,9 +240,10 @@
 
 1198366888 source:c:\dev\projects\4ev_entry\src\lua_utils.cpp
 
-1198971329 source:c:\dev\projects\4ev_entry\src\utils.cpp
+1199264237 source:c:\dev\projects\4ev_entry\src\utils.cpp
 	"utils.h"
 	<hgecolor.h>
+	<math.h>
 
 1198110500 source:c:\dev\projects\4ev_entry\src\vector.cpp
 	"vector.h"
@@ -265,7 +266,7 @@
 	<stdio.h>
 	"xmlParser.h"
 
-1179891380 c:\dev\projects\4ev_entry\include\hge\hge.h
+1192245142 c:\dev\projects\4ev_entry\include\hge\hge.h
 	<windows.h>
 
 1199096607 source:c:\dev\projects\4ev_entry\src\gamemodel.cpp
@@ -285,12 +286,12 @@
 	<stdio.h>
 	"lua.h"
 
-1176932886 c:\dev\projects\4ev_entry\include\hge\hgecolor.h
+1176936486 c:\dev\projects\4ev_entry\include\hge\hgecolor.h
 	"hge.h"
 
 1197793414 c:\dev\projects\4ev_entry\include\lualink.h
 
-1199101453 source:c:\dev\projects\4ev_entry\src\main.cpp
+1199102249 source:c:\dev\projects\4ev_entry\src\main.cpp
 	<hge.h>
 	<hgecolor.h>
 	<hgefont.h>
@@ -298,17 +299,17 @@
 	"chipmunk/chipmunk.h"
 	"main.h"
 
-1177538340 c:\dev\projects\4ev_entry\include\hge\hgefont.h
+1184975834 c:\dev\projects\4ev_entry\include\hge\hgefont.h
 	"hge.h"
 	"hgesprite.h"
 
-1177631746 c:\dev\projects\4ev_entry\include\hge\hgesprite.h
+1177635346 c:\dev\projects\4ev_entry\include\hge\hgesprite.h
 	"hge.h"
 	"hgerect.h"
 
-1176932886 c:\dev\projects\4ev_entry\include\hge\hgerect.h
+1176936486 c:\dev\projects\4ev_entry\include\hge\hgerect.h
 
-1179891380 c:\dev\projects\4ev_entry\include\hge\hgegui.h
+1179894980 c:\dev\projects\4ev_entry\include\hge\hgegui.h
 	"hge.h"
 	"hgesprite.h"
 	"hgerect.h"
@@ -329,7 +330,7 @@
 
 1198366892 c:\dev\projects\4ev_entry\include\lua_utils.h
 
-1199102149 source:c:\dev\projects\4ev_entry\src\system.cpp
+1199110571 source:c:\dev\projects\4ev_entry\src\system.cpp
 	"System.h"
 
 1199102156 c:\dev\projects\4ev_entry\include\system.h

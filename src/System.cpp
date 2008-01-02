@@ -5,6 +5,7 @@ extern bool FrameFunc();
 extern bool RenderFunc();
 System::System()
 {
+	//Create the HGE interface
 	hge = hgeCreate(HGE_VERSION);
 }
 
@@ -28,11 +29,24 @@ int System::Init()
 	hge->System_SetState(HGE_USESOUND, false);
 	hge->System_SetState(HGE_LOGFILE, "game.log");
 	hge->System_SetState(HGE_FPS, HGEFPS_UNLIMITED);
+	int pstatus = hge->System_GetState(HGE_POWERSTATUS);
+
+	if(pstatus != HGEPWR_UNSUPPORTED)
+	{
+		if(pstatus == HGEPWR_AC)
+		{
+			hge->System_Log("Battery Level: AC");
+		}else{
+			hge->System_Log("Battery Level: %i",pstatus);
+		}
+	}else hge->System_Log("Battery Level: N/A");
 	return hge->System_Initiate();
 }
 void System::End()
 {
+	//Tell Resource Manager to free all resources
 	RsrcManager.~ResourceManager();
+	//shut down HGE
 	hge->System_Shutdown();
 }
 void System::Log(char* format,...){
@@ -41,6 +55,6 @@ void System::Log(char* format,...){
 	va_start(ap, format);
 	vsprintf(_strbuf,format, ap); /// Call vprintf
 	va_end(ap); /// Cleanup the va_list
-	hge->System_Log(_strbuf);
+	hge->System_Log(_strbuf);//output to log
 };
 

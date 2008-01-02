@@ -2,7 +2,7 @@
 #include <stdint.h>
 #define MAP_NODE_WIDTH	8
 #define MAP_NODE_HEIGHT	8
-typedef enum{
+typedef enum MapNode_Position_Struct{
 	MNPOS_NORTH,
 	MNPOS_SOUTH,
 	MNPOS_EAST,

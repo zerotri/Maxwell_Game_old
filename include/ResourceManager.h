@@ -4,7 +4,7 @@
 #include <hge.h>
 #include <map>
 #include <string>
-typedef enum{
+typedef enum ResourceType_Enum{
 	RSRC_SURFACE,
 	RSRC_DATA
 }ResourceType;

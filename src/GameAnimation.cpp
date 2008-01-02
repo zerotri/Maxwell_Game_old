@@ -48,10 +48,15 @@ void GameAnimation::drawCurrentFrame(int x, int y, HTEXTURE drawTexture)
 	if(baseAnimation == NULL)
 		return;
 	int iMaxPrims = 0;
-	/*if(drawTexture == 0)
-		drawTexture = baseAnimation->hTex;*/
-	hgeVertex *v = hge->Gfx_StartBatch(HGEPRIM_QUADS, baseAnimation->hTex, BLEND_DEFAULT, &iMaxPrims);
-	//hge->System_Log("Maximum Vertices: %i",iMaxPrims);
+	hgeVertex *v;
+	if(drawTexture != 0)
+	{
+		v = hge->Gfx_StartBatch(HGEPRIM_QUADS, drawTexture, BLEND_DEFAULT, &iMaxPrims);
+	}
+	else
+	{
+		v = hge->Gfx_StartBatch(HGEPRIM_QUADS, baseAnimation->hTex, BLEND_DEFAULT, &iMaxPrims);
+	}
 	SET_XY(v[0],x,y);
 	SET_XY(v[1],x+128,y);
 	SET_XY(v[2],x+128,y+128);
