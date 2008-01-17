@@ -1,60 +1,144 @@
 #include "System.h"
-HGE* hge = 0;
-char _strbuf[256];
-extern bool FrameFunc();
-extern bool RenderFunc();
+
 System::System()
 {
-	//Create the HGE interface
-	hge = hgeCreate(HGE_VERSION);
+	/* Initialize SDL */
+	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0) {
+			fprintf(stderr, "Unable to init SDL: %s\n",
+					SDL_GetError());
+			exit(1);
+	}
 }
 
 System::~System()
 {
-	// Release the HGE interface.
-	// If there are no more references,
-	// the HGE object will be deleted.
-	hge->Release();
+	SDL_Quit();
 }
 
 int System::Init()
 {
-	hge->System_SetState(HGE_SHOWSPLASH, false);
-	hge->System_SetState(HGE_FRAMEFUNC, FrameFunc);
-	hge->System_SetState(HGE_RENDERFUNC, RenderFunc);
-	hge->System_SetState(HGE_SCREENWIDTH, 320);
-	hge->System_SetState(HGE_SCREENHEIGHT, 240);
-	hge->System_SetState(HGE_TITLE, "Maxwell Game");
-	hge->System_SetState(HGE_WINDOWED, true);
-	hge->System_SetState(HGE_USESOUND, false);
-	hge->System_SetState(HGE_LOGFILE, "game.log");
-	hge->System_SetState(HGE_FPS, HGEFPS_UNLIMITED);
-	int pstatus = hge->System_GetState(HGE_POWERSTATUS);
+	nFPS=0;
+	return true;
+}
+void System::Run()
+{
+	if(!_private_FrameFunc) {
+		Log("System::Run: No frame function defined");
+		return;
+	}
 
-	if(pstatus != HGEPWR_UNSUPPORTED)
+	bActive=true;
+	float fTime=0.0f;
+	float t0fps, cfps;
+	float t0=t0fps=SDL_GetTicks();
+	float dt=cfps=0;
+	float fDeltaTime;
+	float nFixedDelta;
+	int nLastTime=SDL_GetTicks();
+
+	// MAIN LOOP
+
+	for(;;)
 	{
-		if(pstatus == HGEPWR_AC)
+
+		// If HGE window is focused or we have the "don't suspend" state - process the main loop
+		if(bActive)
 		{
-			hge->System_Log("Battery Level: AC");
-		}else{
-			hge->System_Log("Battery Level: %i",pstatus);
+			// Ensure we have at least 1ms time step
+			// to not confuse user's code with 0
+
+			do { dt=SDL_GetTicks() - t0; } while(dt < 1);
+
+			// If we reached the time for the next frame
+			// or we just run in unlimited FPS mode, then
+			// do the stuff
+
+			frameTime = (float)(SDL_GetTicks() - nLastTime)/1000.0f;
+			nLastTime = SDL_GetTicks();
+
+			if(dt >= nFixedDelta)
+			{
+				// fDeltaTime = time step in seconds returned by Timer_GetDelta
+
+				fDeltaTime=dt/1000.0f;
+
+				// Cap too large time steps usually caused by lost focus to avoid jerks
+				if(fDeltaTime > 0.2f)
+				{
+					fDeltaTime = nFixedDelta ? nFixedDelta/1000.0f : 0.01f;
+				}
+
+				// Update time counter returned Timer_GetTime
+
+				fTime += fDeltaTime;
+
+				// Store current time for the next frame
+				// and count FPS
+
+				t0=SDL_GetTicks();
+				if(t0-t0fps <= 1000.0f) cfps++;
+				else
+				{
+					nFPS=(int)cfps; cfps=0; t0fps=t0;
+					Log("FPS: %i", nFPS);
+				}
+
+				// Do user's stuff
+
+				if(!_private_FrameFunc->_FrameFunc()) break;
+
+				// If we use VSYNC - we could afford a little
+				// sleep to lower CPU usage
+
+				// if(!bWindowed && nHGEFPS==HGEFPS_VSYNC) Sleep(1);
+			}
+
+			// If we have a fixed frame rate and the time
+			// for the next frame isn't too close, sleep a bit
+
+			else
+			{
+				if(nFixedDelta && dt+3 < nFixedDelta) Sleep(1);
+			}
 		}
-	}else hge->System_Log("Battery Level: N/A");
-	return hge->System_Initiate();
+
+		// If main loop is suspended - just sleep a bit
+		// (though not too much to allow instant window
+		// redraw if requested by OS)
+
+		else Sleep(1);
+	}
+	bActive=false;
+	return;
+}
+int System::FPS()
+{
+	return nFPS;
+}
+float System::getFrameTime()
+{
+	return frameTime;
 }
 void System::End()
 {
-	//Tell Resource Manager to free all resources
-	RsrcManager.~ResourceManager();
-	//shut down HGE
-	hge->System_Shutdown();
+
 }
-void System::Log(char* format,...){
+void System::SetFrameFunc(SysCallBack* frameFunc)
+{
+	_private_FrameFunc = frameFunc;
+}
+void System::Sleep(int count)
+{
+	SDL_Delay(count);
+}
+void System::Log(char* format,...)
+{
+	char _strbuf[256];
 	///create va_list and load all arguments
 	va_list ap;
 	va_start(ap, format);
 	vsprintf(_strbuf,format, ap); /// Call vprintf
 	va_end(ap); /// Cleanup the va_list
-	hge->System_Log(_strbuf);//output to log
-};
-
+	fprintf(stdout,"%s\n",_strbuf);
+	fflush(stdout);
+}

@@ -6,33 +6,75 @@
 ** hge_tut01 - Minimal HGE application
 */
 
-#include <hge.h>
-#include <hgecolor.h>
-#include <hgefont.h>
-#include <hgegui.h>
-#include "chipmunk/chipmunk.h"
+//#include "chipmunk.h"
 #include "main.h"
-System sys;
-LuaVM* lua;
-extern HGE *hge;
-hgeFont* font;
-hgeQuad rectangle;
-hgeVertex corners[4];
-ANIM gAnims[2];
-GameAnimation sprAnim;
-HTEXTURE spr1 = 0, spr2 = 0, spr3 = 0;
-bool is_Rendering = true;
-Input inputHandler;
-char key = '\0';
-class InputA : public InputHandler
+#include "ApplicationBase.h"
+
+//Lua Function Prototypes
+int l_PrintText( lua_State* luaVM);
+int l_GetKeystate( lua_State* luaVM);
+int l_DrawLine( lua_State* luaVM);
+void loadLua(LuaVM* lua);
+class MainApplication : public ApplicationBase
 {
+	public:
+	bool bRunning;
+	ANIM gAnims[2];
+	GameAnimation sprAnim;
+	Resource rsrc;
+	Resource wrldTs;
+	bool Init()
+	{
+		bRunning = true;
+		//Set up all System-related stuff. I need to clean this all up later.
+		loadLua(&lua);
+
+		/*spr1 = _ResourceManager.LoadTexture("spr1.png","spr1");
+		spr2 = _ResourceManager.LoadTexture("spr3.png","spr2");
+		spr3 = _ResourceManager.LoadTexture("ts_01.png","ts_01");
+		rsrc = _ResourceManager["spr1"];
+		wrldTs = _ResourceManager["ts_01"];
+		// Starts running FrameFunc().
+		// Note that the execution "stops" here
+		// until "true" is returned from FrameFunc().
+		SET_TLBR(gAnims[0],0.0f,0.0f,1.0f,1.0f);
+		SET_TLBR(gAnims[1],0.0f,0.0f,1.0f,1.0f);
+		gAnims[0].pSurf = spr1;
+		gAnims[1].pSurf = spr2;
+		gAnims[0].fAnimSpeed = 1.0f;
+		gAnims[1].fAnimSpeed = 1.0f;
+		gAnims[0].lpNext = &gAnims[1];
+		gAnims[1].lpNext = &gAnims[0];
+		sprAnim.setAnimation(&gAnims[0]);
+		sprAnim.setGraphics(&_Graphics);*/
+		return true;
+	}
+	bool FrameFunc()
+	{
+		_Input.Query();
+		//gfx.DrawString(0.0f,20.0f,"Input->MsgCount: %i",sys.getInput().GetMsgCount());
+		//gfx.DrawSurface(32,32,rsrc.rsrc.surface);
+		// Process window messages if not in "child mode"
+		// (if in "child mode" the parent application will do this for us)
+		//_GameWorld.DrawWorld(wrldTs.rsrc.surface);
+		//sprAnim.update(_System.getFrameTime());
+		//sprAnim.drawCurrentFrame(128,128);
+		_Graphics.Render();
+		_Graphics.DrawString(0,0,"FPS: %i",(int)_System.FPS());
+		_Graphics.DrawString(32,32,"Hello SGE World!\nWynter is %i", 17);
+
+		lua.callFunction("draw");
+		lua.run();
+
+		return bRunning;
+	}
 	void onKeyPress(int keyboard_key, int keyboard_flag, int keyboard_char)
 	{
-		key = keyboard_char;
+		if(keyboard_key == SDLK_ESCAPE) bRunning = false;
+		//if(keyboard_key == SDLK_F5) loadLua(&lua);
 	};
 	void onKeyRelease(int keyboard_key, int keyboard_flag, int keyboard_char)
 	{
-		key = '\0';
 	};
 	void onMouseMove(float mouse_x, float mouse_y)
 	{
@@ -46,150 +88,66 @@ class InputA : public InputHandler
 	void onMouseWheel(int degrees, float mouse_x, float mouse_y)
 	{
 	};
+	SDL_Surface* spr1, *spr2, *spr3;
+	LuaVM lua;
 };
-InputA input;
+
+
+int main(int argc, char** argv)
+{
+	putenv("SDL_VIDEODRIVER=directx");
+	MainApplication MainApp;
+	bool returnval = MainApp.Run();
+	MainApp.~ApplicationBase();
+	return returnval;
+}
+
 int l_GetKeystate( lua_State* luaVM)
 {
-	lua_pushnumber( luaVM, (lua_Number)(hge->Input_GetKeyState((int)lua_tonumber(luaVM, -1))));
+	//lua_pushnumber( luaVM, (lua_Number)input->GetKeyState((int)lua_tonumber(luaVM, -1)));
 	return true;
 }
 int l_DrawLine( lua_State* luaVM)
 {
-
-	hge->Gfx_RenderLine( (lua_Number)lua_tonumber(luaVM, -4),
-					(lua_Number)lua_tonumber(luaVM, -3),
-					(lua_Number)lua_tonumber(luaVM, -2),
-					(lua_Number)lua_tonumber(luaVM, -1),
-					HWCOL(white), 1);
+	/*gfx->DrawLine(	(int)lua_tonumber(luaVM, -4),
+					(int)lua_tonumber(luaVM, -3),
+					(int)lua_tonumber(luaVM, -2),
+					(int)lua_tonumber(luaVM, -1));*/
 	return true;
 
 }
 int l_PrintText( lua_State* luaVM)
 {
-	if(!is_Rendering)
-		return false;
-	font->printf(lua_tonumber(luaVM, -3),lua_tonumber(luaVM, -2),HGETEXT_LEFT,lua_tostring(luaVM, -1));
-	lua_pushnumber( luaVM, 0 );
+	//gfx->DrawString((int)lua_tonumber(luaVM, -3),(int)lua_tonumber(luaVM, -2),(char*)lua_tostring(luaVM, -1));
 	return true;
 }
 // This function will be called by HGE once per frame.
 // Put your game loop code here. In this example we
 // just check whether ESC key has been pressed.
-void loadLua(){
+void loadLua(LuaVM* lua){
 	lua->resetState();
-	lua->setVariable("VK_F1",	HGEK_F1);
-	lua->setVariable("VK_F2",	HGEK_F2);
-	lua->setVariable("VK_F3",	HGEK_F3);
-	lua->setVariable("VK_F4",	HGEK_F4);
-	lua->setVariable("VK_F5",	HGEK_F5);
-	lua->setVariable("VK_F6",	HGEK_F6);
-	lua->setVariable("VK_F7",	HGEK_F7);
-	lua->setVariable("VK_F8",	HGEK_F8);
-	lua->setVariable("VK_F9",	HGEK_F9);
-	lua->setVariable("VK_F10",	HGEK_F10);
-	lua->setVariable("VK_F11",	HGEK_F11);
-	lua->setVariable("VK_F12",	HGEK_F12);
-	lua->setVariable("VK_LEFT",	HGEK_LEFT);
-	lua->setVariable("VK_RIGHT",HGEK_RIGHT);
-	lua->setVariable("VK_UP",	HGEK_UP);
-	lua->setVariable("VK_DOWN",	HGEK_DOWN);
-	lua->setVariable("VK_A",	HGEK_A);
-	lua->setVariable("HGEPRIM_LINES",	HGEPRIM_LINES);
-	lua->setVariable("HGEPRIM_TRIPLES",	HGEPRIM_TRIPLES);
-	lua->setVariable("HGEPRIM_QUADS",	HGEPRIM_QUADS);
-	lua->registerFunction("PrintText",	l_PrintText);
+	lua->setVariable("VK_F1",	SDLK_F1);
+	lua->setVariable("VK_F2",	SDLK_F2);
+	lua->setVariable("VK_F3",	SDLK_F3);
+	lua->setVariable("VK_F4",	SDLK_F4);
+	lua->setVariable("VK_F5",	SDLK_F5);
+	lua->setVariable("VK_F6",	SDLK_F6);
+	lua->setVariable("VK_F7",	SDLK_F7);
+	lua->setVariable("VK_F8",	SDLK_F8);
+	lua->setVariable("VK_F9",	SDLK_F9);
+	lua->setVariable("VK_F10",	SDLK_F10);
+	lua->setVariable("VK_F11",	SDLK_F11);
+	lua->setVariable("VK_F12",	SDLK_F12);
+	lua->setVariable("VK_LEFT",	SDLK_LEFT);
+	lua->setVariable("VK_RIGHT",SDLK_RIGHT);
+	lua->setVariable("VK_UP",	SDLK_UP);
+	lua->setVariable("VK_DOWN",	SDLK_DOWN);
+	lua->setVariable("VK_A",	'A');
+	lua->registerFunction("PrintText",		l_PrintText);
 	lua->registerFunction("GetKeystate",	l_GetKeystate);
-	lua->registerFunction("DrawLine",	l_DrawLine);
+	lua->registerFunction("DrawLine",		l_DrawLine);
 	if(lua->loadFile("__game.lua")!=0)
 	{
-		hge->System_Log("Cannot run lua file: %s", lua->getString(-1));
+		Log("Cannot run lua file: %s", lua->getString(-1));
 	}else lua->run();
-}
-
-bool FrameFunc()
-{
-	// By returning "true" we tell HGE
-	// to stop running the application.
-	sprAnim.update(hge->Timer_GetDelta());
-	if (hge->Input_GetKeyState(HGEK_F5)) loadLua();
-	if (hge->Input_GetKeyState(HGEK_ESCAPE)) return true;
-	// Continue execution
-	return false;
-}
-bool RenderFunc()
-{
-	// Render graphics
-	corners[0].col = HWCOL(blue);
-	corners[1].col = HWCOL(blue);
-	corners[2].col = HWCOL(blue);
-	corners[3].col = HWCOL(blue);
-	rectangle.v[0] = corners[0];
-	rectangle.v[1] = corners[1];
-	rectangle.v[2] = corners[2];
-	rectangle.v[3] = corners[3];
-	font->SetColor(HWCOL(white));
-	hge->Gfx_BeginScene();
-		is_Rendering = true;
-		hge->Gfx_Clear(0);
-		hge->Gfx_RenderQuad(&rectangle);
-		inputHandler.Query();
-		if(key!='\0')font->printf(0,0,HGETEXT_LEFT,"Key Pressed: %c", key);
-		lua->callFunction("draw");
-		lua->run();
-		sprAnim.drawCurrentFrame(128,128);
-		font->printf(32.0f,32.0f,HGETEXT_LEFT,"FPS: %i\nHello World!",hge->Timer_GetFPS());
-		is_Rendering = false;
-	hge->Gfx_EndScene();
-
-	return false;
-}
-
-int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
-{
-	if(sys.Init())
-	{
-		SET_XY(corners[0],	8,	8);
-		SET_XY(corners[1],	hge->System_GetState(HGE_SCREENWIDTH) - 8,	8);
-		SET_XY(corners[2],	hge->System_GetState(HGE_SCREENWIDTH) - 8,
-							hge->System_GetState(HGE_SCREENHEIGHT) - 8);
-		SET_XY(corners[3],	8,	hge->System_GetState(HGE_SCREENHEIGHT) - 8);
-		rectangle.blend = BLEND_DEFAULT;
-		lua = new LuaVM();
-		loadLua();
-		inputHandler.AddInputHandler(&input);
-		font = new hgeFont("font.fnt");
-		font->SetBlendMode(BLEND_DEFAULT);
-		// Starts running FrameFunc().
-		// Note that the execution "stops" here
-		// until "true" is returned from FrameFunc().
-        //
-        spr1 = sys.RsrcManager.LoadTexture("spr1.png","spr1");
-        spr2 = sys.RsrcManager.LoadTexture("spr3.png","spr2");
-		SET_TLBR(gAnims[0],0.0f,0.0f,1.0f,1.0f);
-		SET_TLBR(gAnims[1],0.0f,0.0f,1.0f,1.0f);
-		gAnims[0].hTex = spr1;
-		gAnims[1].hTex = spr2;
-		gAnims[0].fAnimSpeed = 0.25f;
-		gAnims[1].fAnimSpeed = 0.50f;
-		gAnims[0].lpNext = &gAnims[1];
-		gAnims[1].lpNext = &gAnims[0];
-		sprAnim.setAnimation(&gAnims[0]);
-		hge->System_Start();
-	}
-	else
-	{
-		// If HGE initialization failed show error message
-		MessageBox(NULL, hge->System_GetErrorMessage(), "Error", MB_OK | MB_ICONERROR | MB_APPLMODAL);
-	}
-
-	// Now ESC has been pressed or the user
-	// has closed the window by other means.
-
-	// Restore video mode and free
-	// all allocated resources
-	delete font;
-	delete lua;
-	sys.End();
-
-	return 0;
 }

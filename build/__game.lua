@@ -7,5 +7,6 @@ function draw()
 	end
 	PrintText(32,90,"Hello Lua World!")
 	PrintText(32,100,"01011001 = Y")
+	PrintText(32,110,"RESET!")
 	DrawLine(32,32,64,128)
 end

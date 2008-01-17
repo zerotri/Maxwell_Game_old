@@ -1,7 +1,5 @@
 #ifndef INPUT_H
 #define INPUT_H
-
-#include <hge.h>
 #include <vector>
 
 class InputHandler;
@@ -12,9 +10,13 @@ class Input
 		~Input();
 		void Query();
 		void AddInputHandler(InputHandler* newInput);
+		int GetMsgCount();
+		bool GetKeyState(unsigned char key);
 	protected:
 		std::vector<InputHandler*> vInputHandlers;
 	private:
+		unsigned char* keys;
+		long long int msgCount;
 		int updateInterval;
 };
 

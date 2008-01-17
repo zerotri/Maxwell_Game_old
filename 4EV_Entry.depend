@@ -154,25 +154,29 @@
 	<windows.h>
 	<gl/gl.h>
 
-1199264327 source:c:\dev\projects\4ev_entry\src\gameanimation.cpp
+1200200632 source:c:\dev\projects\4ev_entry\src\gameanimation.cpp
 	"GameAnimation.h"
 	"utils.h"
 
-1198517724 c:\dev\projects\4ev_entry\include\gameanimation.h
-	<hge.h>
+1200200625 c:\dev\projects\4ev_entry\include\gameanimation.h
+	<sdl.h>
+	"Graphics.h"
 
-1198836136 c:\dev\projects\4ev_entry\include\utils.h
-	<hge.h>
+1199864800 c:\dev\projects\4ev_entry\include\utils.h
 
 1199092866 source:c:\dev\projects\4ev_entry\src\gameentity.cpp
 	"GameEntity.h"
 
-1199098205 c:\dev\projects\4ev_entry\include\gameentity.h
+1199760859 c:\dev\projects\4ev_entry\include\gameentity.h
 	<vector.h>
+	<sdl.h>
 
-1199099187 source:c:\dev\projects\4ev_entry\src\gameworld.cpp
+1200201083 source:c:\dev\projects\4ev_entry\src\gameworld.cpp
+	"GameWorld.h"
+	<math.h>
 
-1199099180 c:\dev\projects\4ev_entry\include\gameworld.h
+1200083499 c:\dev\projects\4ev_entry\include\gameworld.h
+	"Graphics.h"
 
 1198736949 c:\dev\projects\4ev_entry\include\gamemodel.h
 	"chipmunk/chipmunk.h"
@@ -221,11 +225,11 @@
 	<tchar.h>
 	<wchar.h>
 
-1199004014 source:c:\dev\projects\4ev_entry\src\input.cpp
+1200198766 source:c:\dev\projects\4ev_entry\src\input.cpp
 	"Input.h"
+	<sdl.h>
 
-1198992127 c:\dev\projects\4ev_entry\include\input.h
-	<hge.h>
+1200198780 c:\dev\projects\4ev_entry\include\input.h
 	<vector>
 
 1198371689 source:c:\dev\projects\4ev_entry\src\luavm.cpp
@@ -240,10 +244,11 @@
 
 1198366888 source:c:\dev\projects\4ev_entry\src\lua_utils.cpp
 
-1199264237 source:c:\dev\projects\4ev_entry\src\utils.cpp
+1199864861 source:c:\dev\projects\4ev_entry\src\utils.cpp
 	"utils.h"
-	<hgecolor.h>
 	<math.h>
+	<stdarg.h>
+	<stdio.h>
 
 1198110500 source:c:\dev\projects\4ev_entry\src\vector.cpp
 	"vector.h"
@@ -291,13 +296,9 @@
 
 1197793414 c:\dev\projects\4ev_entry\include\lualink.h
 
-1199102249 source:c:\dev\projects\4ev_entry\src\main.cpp
-	<hge.h>
-	<hgecolor.h>
-	<hgefont.h>
-	<hgegui.h>
-	"chipmunk/chipmunk.h"
+1200532484 source:c:\dev\projects\4ev_entry\src\main.cpp
 	"main.h"
+	"ApplicationBase.h"
 
 1184975834 c:\dev\projects\4ev_entry\include\hge\hgefont.h
 	"hge.h"
@@ -314,36 +315,1247 @@
 	"hgesprite.h"
 	"hgerect.h"
 
-1199099116 c:\dev\projects\4ev_entry\include\main.h
-	<hgecolor.h>
+1199863301 c:\dev\projects\4ev_entry\include\main.h
+	<sdl.h>
+	<sdl_image.h>
 	"vector.h"
+	<lua.h>
+	"lualib.h"
+	"lauxlib.h"
 	"lua_utils.h"
 	"LuaVM.h"
 	"Input.h"
 	"System.h"
+	"Graphics.h"
 	"GameAnimation.h"
 	"GameWorld.h"
 	"utils.h"
-	<lua.h>
-	"lualib.h"
-	"lauxlib.h"
 
 1198366892 c:\dev\projects\4ev_entry\include\lua_utils.h
 
-1199110571 source:c:\dev\projects\4ev_entry\src\system.cpp
+1200531094 source:c:\dev\projects\4ev_entry\src\system.cpp
 	"System.h"
 
-1199102156 c:\dev\projects\4ev_entry\include\system.h
-	<hge.h>
+1200532057 c:\dev\projects\4ev_entry\include\system.h
+	<sdl.h>
 	<stdarg.h>
 	<stdio.h>
-	"ResourceManager.h"
 
-1199101330 c:\dev\projects\4ev_entry\include\resourcemanager.h
-	<hge.h>
+1200531486 c:\dev\projects\4ev_entry\include\resourcemanager.h
+	<main.h>
 	<map>
 	<string>
 
-1199101617 source:c:\dev\projects\4ev_entry\src\resourcemanager.cpp
+1200531677 source:c:\dev\projects\4ev_entry\src\resourcemanager.cpp
 	"ResourceManager.h"
+	"system.h"
+
+1199269522 source:c:\dev\projects\4ev_entry\include\hge\hgeguictrls2.cpp
+	"hgeguictrls2.h"
+
+1199269404 c:\dev\projects\4ev_entry\include\hge\hgeguictrls2.h
+	<hge.h>
+	<hgegui.h>
+	<hgefont.h>
+	<hgecolor.h>
+	<hgevector.h>
+
+1176936486 c:\dev\projects\4ev_entry\include\hge\hgevector.h
+	"hge.h"
+	<math.h>
+
+1200530170 source:c:\dev\projects\4ev_entry\src\graphics.cpp
+	"Graphics.h"
+	<time.h>
+	<math.h>
+	<stdio.h>
+	<string.h>
+	<sge.h>
+
+1200532106 c:\dev\projects\4ev_entry\include\graphics.h
+	<sdl.h>
+	"utils.h"
+	<sge.h>
+
+1187669202 c:\dev\projects\4ev_entry\include\cairo\cairo.h
+	<cairo-features.h>
+	<cairo-deprecated.h>
+
+1187669202 c:\dev\projects\4ev_entry\include\cairo\cairo-features.h
+
+1187669202 c:\dev\projects\4ev_entry\include\cairo\cairo-deprecated.h
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_platform.h
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\begin_code.h
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\close_code.h
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_keysym.h
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\include\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1160377636 source:c:\dev\projects\4ev_entry\lib\agg\agg_arc.cpp
+	<math.h>
+	"agg_arc.h"
+
+1160377616 c:\dev\projects\4ev_entry\include\agg\agg_arc.h
+	<math.h>
+	"agg_basics.h"
+
+1160377616 c:\dev\projects\4ev_entry\include\agg\agg_basics.h
+	<math.h>
+	"agg_config.h"
+	"agg_allocator.h"
+
+1160377618 c:\dev\projects\4ev_entry\include\agg\agg_config.h
+
+1160377636 source:c:\dev\projects\4ev_entry\lib\agg\agg_arrowhead.cpp
+	"agg_arrowhead.h"
+
+1160377616 c:\dev\projects\4ev_entry\include\agg\agg_arrowhead.h
+	"agg_basics.h"
+
+1160377636 source:c:\dev\projects\4ev_entry\lib\agg\agg_bezier_arc.cpp
+	<math.h>
+	"agg_bezier_arc.h"
+
+1160377616 c:\dev\projects\4ev_entry\include\agg\agg_bezier_arc.h
+	"agg_conv_transform.h"
+
+1160377618 c:\dev\projects\4ev_entry\include\agg\agg_conv_transform.h
+	"agg_basics.h"
+	"agg_trans_affine.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\agg_trans_affine.h
+	<math.h>
+	"agg_basics.h"
+
+1160377636 source:c:\dev\projects\4ev_entry\lib\agg\agg_bspline.cpp
+	"agg_bspline.h"
+
+1160377618 c:\dev\projects\4ev_entry\include\agg\agg_bspline.h
+	"agg_array.h"
+
+1160377616 c:\dev\projects\4ev_entry\include\agg\agg_array.h
+	<stddef.h>
+	<string.h>
+	"agg_basics.h"
+
+1160377636 source:c:\dev\projects\4ev_entry\lib\agg\agg_curves.cpp
+	<math.h>
+	"agg_curves.h"
+	"agg_math.h"
+
+1160377618 c:\dev\projects\4ev_entry\include\agg\agg_curves.h
+	"agg_array.h"
+
+1160377622 c:\dev\projects\4ev_entry\include\agg\agg_math.h
+	<math.h>
+	"agg_basics.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_embedded_raster_fonts.cpp
+	"agg_embedded_raster_fonts.h"
+
+1160377620 c:\dev\projects\4ev_entry\include\agg\agg_embedded_raster_fonts.h
+	"agg_basics.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_gsv_text.cpp
+	<string.h>
+	<stdio.h>
+	"agg_gsv_text.h"
+	"agg_bounding_rect.h"
+
+1160377620 c:\dev\projects\4ev_entry\include\agg\agg_gsv_text.h
+	"agg_array.h"
+	"agg_conv_stroke.h"
+	"agg_conv_transform.h"
+
+1160377618 c:\dev\projects\4ev_entry\include\agg\agg_conv_stroke.h
+	"agg_basics.h"
+	"agg_vcgen_stroke.h"
+	"agg_conv_adaptor_vcgen.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\agg_vcgen_stroke.h
+	"agg_math_stroke.h"
+
+1160377622 c:\dev\projects\4ev_entry\include\agg\agg_math_stroke.h
+	"agg_math.h"
+	"agg_vertex_sequence.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\agg_vertex_sequence.h
+	"agg_basics.h"
+	"agg_array.h"
+	"agg_math.h"
+
+1160377618 c:\dev\projects\4ev_entry\include\agg\agg_conv_adaptor_vcgen.h
+	"agg_basics.h"
+
+1160377618 c:\dev\projects\4ev_entry\include\agg\agg_bounding_rect.h
+	"agg_basics.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_image_filters.cpp
+	"agg_image_filters.h"
+
+1160377620 c:\dev\projects\4ev_entry\include\agg\agg_image_filters.h
+	"agg_array.h"
+	"agg_math.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_line_aa_basics.cpp
+	<math.h>
+	"agg_line_aa_basics.h"
+
+1160377620 c:\dev\projects\4ev_entry\include\agg\agg_line_aa_basics.h
+	<stdlib.h>
+	"agg_basics.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_line_profile_aa.cpp
+	"agg_renderer_outline_aa.h"
+
+1160377628 c:\dev\projects\4ev_entry\include\agg\agg_renderer_outline_aa.h
+	"agg_array.h"
+	"agg_math.h"
+	"agg_line_aa_basics.h"
+	"agg_dda_line.h"
+	"agg_ellipse_bresenham.h"
+	"agg_renderer_base.h"
+	"agg_gamma_functions.h"
+	"agg_clip_liang_barsky.h"
+
+1160377620 c:\dev\projects\4ev_entry\include\agg\agg_dda_line.h
+	<stdlib.h>
+	"agg_basics.h"
+
+1160377620 c:\dev\projects\4ev_entry\include\agg\agg_ellipse_bresenham.h
+	"agg_basics.h"
+
+1160377626 c:\dev\projects\4ev_entry\include\agg\agg_renderer_base.h
+	"agg_basics.h"
+	"agg_rendering_buffer.h"
+
+1160377630 c:\dev\projects\4ev_entry\include\agg\agg_rendering_buffer.h
+	"agg_array.h"
+
+1160377620 c:\dev\projects\4ev_entry\include\agg\agg_gamma_functions.h
+	<math.h>
+	"agg_basics.h"
+
+1160377618 c:\dev\projects\4ev_entry\include\agg\agg_clip_liang_barsky.h
+	"agg_basics.h"
+
+1183865740 source:c:\dev\projects\4ev_entry\lib\agg\agg_rounded_rect.cpp
+	<math.h>
+	"agg_rounded_rect.h"
+
+1160377630 c:\dev\projects\4ev_entry\include\agg\agg_rounded_rect.h
+	"agg_basics.h"
+	"agg_arc.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_sqrt_tables.cpp
+	"agg_basics.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_trans_affine.cpp
+	"agg_trans_affine.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_trans_double_path.cpp
+	"agg_math.h"
+	"agg_trans_double_path.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\agg_trans_double_path.h
+	"agg_basics.h"
+	"agg_vertex_sequence.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_trans_single_path.cpp
+	"agg_math.h"
+	"agg_vertex_sequence.h"
+	"agg_trans_single_path.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\agg_trans_single_path.h
+	"agg_basics.h"
+	"agg_vertex_sequence.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_trans_warp_magnifier.cpp
+	<math.h>
+	"agg_trans_warp_magnifier.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\agg_trans_warp_magnifier.h
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_vcgen_bspline.cpp
+	"agg_vcgen_bspline.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\agg_vcgen_bspline.h
+	"agg_basics.h"
+	"agg_array.h"
+	"agg_bspline.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_vcgen_contour.cpp
+	<math.h>
+	"agg_vcgen_contour.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\agg_vcgen_contour.h
+	"agg_math_stroke.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_vcgen_dash.cpp
+	<math.h>
+	"agg_vcgen_dash.h"
+	"agg_shorten_path.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\agg_vcgen_dash.h
+	"agg_basics.h"
+	"agg_vertex_sequence.h"
+
+1160377630 c:\dev\projects\4ev_entry\include\agg\agg_shorten_path.h
+	"agg_basics.h"
+	"agg_vertex_sequence.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_vcgen_markers_term.cpp
+	"agg_vcgen_markers_term.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\agg_vcgen_markers_term.h
+	"agg_basics.h"
+	"agg_vertex_sequence.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_vcgen_smooth_poly1.cpp
+	"agg_vcgen_smooth_poly1.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\agg_vcgen_smooth_poly1.h
+	"agg_basics.h"
+	"agg_vertex_sequence.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_vcgen_stroke.cpp
+	<math.h>
+	"agg_vcgen_stroke.h"
+	"agg_shorten_path.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_vpgen_clip_polygon.cpp
+	"agg_vpgen_clip_polygon.h"
+	"agg_clip_liang_barsky.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\agg_vpgen_clip_polygon.h
+	"agg_basics.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_vpgen_clip_polyline.cpp
+	"agg_vpgen_clip_polyline.h"
+	"agg_clip_liang_barsky.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\agg_vpgen_clip_polyline.h
+	"agg_basics.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\agg_vpgen_segmentator.cpp
+	<math.h>
+	"agg_vpgen_segmentator.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\agg_vpgen_segmentator.h
+	<math.h>
+	"agg_basics.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\ctrl\agg_bezier_ctrl.cpp
+	<string.h>
+	<stdio.h>
+	"ctrl/agg_bezier_ctrl.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\ctrl\agg_bezier_ctrl.h
+	"agg_math.h"
+	"agg_ellipse.h"
+	"agg_trans_affine.h"
+	"agg_color_rgba.h"
+	"agg_conv_stroke.h"
+	"agg_conv_curve.h"
+	"agg_polygon_ctrl.h"
+
+1160377620 c:\dev\projects\4ev_entry\include\agg\agg_ellipse.h
+	"agg_basics.h"
+	<math.h>
+
+1160377618 c:\dev\projects\4ev_entry\include\agg\agg_color_rgba.h
+	<math.h>
+	"agg_basics.h"
+
+1160377618 c:\dev\projects\4ev_entry\include\agg\agg_conv_curve.h
+	"agg_basics.h"
+	"agg_curves.h"
+
+1160377636 c:\dev\projects\4ev_entry\include\agg\ctrl\agg_polygon_ctrl.h
+	"agg_array.h"
+	"agg_conv_stroke.h"
+	"agg_ellipse.h"
+	"agg_color_rgba.h"
+	"agg_ctrl.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\ctrl\agg_ctrl.h
+	"agg_trans_affine.h"
+	"agg_renderer_scanline.h"
+
+1160377630 c:\dev\projects\4ev_entry\include\agg\agg_renderer_scanline.h
+	"agg_basics.h"
+	"agg_renderer_base.h"
+
+1160377642 source:c:\dev\projects\4ev_entry\lib\agg\ctrl\agg_cbox_ctrl.cpp
+	<string.h>
+	"ctrl/agg_cbox_ctrl.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\ctrl\agg_cbox_ctrl.h
+	"agg_basics.h"
+	"agg_conv_stroke.h"
+	"agg_gsv_text.h"
+	"agg_trans_affine.h"
+	"agg_color_rgba.h"
+	"agg_ctrl.h"
+
+1160377644 source:c:\dev\projects\4ev_entry\lib\agg\ctrl\agg_gamma_ctrl.cpp
+	<stdio.h>
+	"agg_math.h"
+	"ctrl/agg_gamma_ctrl.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\ctrl\agg_gamma_ctrl.h
+	"agg_basics.h"
+	"agg_gamma_spline.h"
+	"agg_ellipse.h"
+	"agg_conv_stroke.h"
+	"agg_gsv_text.h"
+	"agg_trans_affine.h"
+	"agg_color_rgba.h"
+	"agg_ctrl.h"
+
+1160377634 c:\dev\projects\4ev_entry\include\agg\ctrl\agg_gamma_spline.h
+	"agg_basics.h"
+	"agg_bspline.h"
+
+1160377644 source:c:\dev\projects\4ev_entry\lib\agg\ctrl\agg_gamma_spline.cpp
+	"ctrl/agg_gamma_spline.h"
+
+1160377644 source:c:\dev\projects\4ev_entry\lib\agg\ctrl\agg_polygon_ctrl.cpp
+	"ctrl/agg_polygon_ctrl.h"
+
+1160377644 source:c:\dev\projects\4ev_entry\lib\agg\ctrl\agg_rbox_ctrl.cpp
+	<string.h>
+	"ctrl/agg_rbox_ctrl.h"
+
+1160377636 c:\dev\projects\4ev_entry\include\agg\ctrl\agg_rbox_ctrl.h
+	"agg_array.h"
+	"agg_ellipse.h"
+	"agg_conv_stroke.h"
+	"agg_gsv_text.h"
+	"agg_trans_affine.h"
+	"agg_color_rgba.h"
+	"agg_ctrl.h"
+
+1160377644 source:c:\dev\projects\4ev_entry\lib\agg\ctrl\agg_scale_ctrl.cpp
+	"ctrl/agg_scale_ctrl.h"
+
+1160377636 c:\dev\projects\4ev_entry\include\agg\ctrl\agg_scale_ctrl.h
+	"agg_basics.h"
+	"agg_math.h"
+	"agg_ellipse.h"
+	"agg_trans_affine.h"
+	"agg_color_rgba.h"
+	"agg_ctrl.h"
+
+1160377644 source:c:\dev\projects\4ev_entry\lib\agg\ctrl\agg_slider_ctrl.cpp
+	<string.h>
+	<stdio.h>
+	"ctrl/agg_slider_ctrl.h"
+
+1160377636 c:\dev\projects\4ev_entry\include\agg\ctrl\agg_slider_ctrl.h
+	"agg_basics.h"
+	"agg_math.h"
+	"agg_ellipse.h"
+	"agg_trans_affine.h"
+	"agg_color_rgba.h"
+	"agg_gsv_text.h"
+	"agg_conv_stroke.h"
+	"agg_path_storage.h"
+	"agg_ctrl.h"
+
+1160377622 c:\dev\projects\4ev_entry\include\agg\agg_path_storage.h
+	<string.h>
+	<math.h>
+	"agg_math.h"
+	"agg_array.h"
+	"agg_bezier_arc.h"
+
+1160377644 source:c:\dev\projects\4ev_entry\lib\agg\ctrl\agg_spline_ctrl.cpp
+	"ctrl/agg_spline_ctrl.h"
+
+1160377636 c:\dev\projects\4ev_entry\include\agg\ctrl\agg_spline_ctrl.h
+	"agg_basics.h"
+	"agg_ellipse.h"
+	"agg_bspline.h"
+	"agg_conv_stroke.h"
+	"agg_path_storage.h"
+	"agg_trans_affine.h"
+	"agg_color_rgba.h"
+	"agg_ctrl.h"
+
+1160377624 c:\dev\projects\4ev_entry\include\agg\agg_pixfmt_rgb.h
+	<string.h>
+	"agg_basics.h"
+	"agg_color_rgba.h"
+	"agg_rendering_buffer.h"
+
+1160377628 c:\dev\projects\4ev_entry\include\agg\agg_renderer_primitives.h
+	"agg_basics.h"
+	"agg_renderer_base.h"
+	"agg_dda_line.h"
+	"agg_ellipse_bresenham.h"
+
+1160377626 c:\dev\projects\4ev_entry\include\agg\agg_rasterizer_scanline_aa.h
+	"agg_rasterizer_cells_aa.h"
+	"agg_rasterizer_sl_clip.h"
+	"agg_gamma_functions.h"
+
+1160377626 c:\dev\projects\4ev_entry\include\agg\agg_rasterizer_cells_aa.h
+	<string.h>
+	<math.h>
+	"agg_math.h"
+	"agg_array.h"
+
+1160377626 c:\dev\projects\4ev_entry\include\agg\agg_rasterizer_sl_clip.h
+	"agg_clip_liang_barsky.h"
+
+1160377630 c:\dev\projects\4ev_entry\include\agg\agg_scanline_p.h
+	"agg_array.h"
+
+1160377624 c:\dev\projects\4ev_entry\include\agg\agg_pixfmt_rgba.h
+	<string.h>
+	<math.h>
+	"agg_basics.h"
+	"agg_color_rgba.h"
+	"agg_rendering_buffer.h"
+
+1160377628 c:\dev\projects\4ev_entry\include\agg\agg_renderer_markers.h
+	"agg_basics.h"
+	"agg_renderer_primitives.h"
+
+1160377620 c:\dev\projects\4ev_entry\include\agg\agg_glyph_raster_bin.h
+	<string.h>
+	"agg_basics.h"
+
+1160377628 c:\dev\projects\4ev_entry\include\agg\agg_renderer_raster_text.h
+	"agg_basics.h"
+
+1191080416 source:c:\dev\projects\4ev_entry\lib\cfl\cfl.cpp
+	"CFL.h"
+	"CFLResource.h"
+	"CFLResourceFilter.h"
+	"CFLLibrary.h"
+	"CFLDirectoryEntry.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\cfl\cfl.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1191080416 c:\dev\projects\4ev_entry\lib\cfl\cflresource.h
+
+1191080416 c:\dev\projects\4ev_entry\lib\cfl\cflresourcefilter.h
+
+1191080416 c:\dev\projects\4ev_entry\lib\cfl\cfllibrary.h
+
+1191080416 c:\dev\projects\4ev_entry\lib\cfl\cfldirectoryentry.h
+
+1191080416 source:c:\dev\projects\4ev_entry\lib\cfl\cfldirectoryentry.cpp
+	"CFL.h"
+	"CFLDirectoryEntry.h"
+
+1191080416 source:c:\dev\projects\4ev_entry\lib\cfl\cfllibrary.cpp
+	"CFL.h"
+	"CFLLibrary.h"
+
+1191080416 source:c:\dev\projects\4ev_entry\lib\cfl\cflmaker.cpp
+	"CFL.h"
+	"CFLMaker.h"
+	"CFLDirectoryEntry.h"
+	"CFLResourceFilter.h"
+	"CFLResource.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\cfl\cflmaker.h
+
+1191080416 source:c:\dev\projects\4ev_entry\lib\cfl\cflresource.cpp
+	"CFL.h"
+	"CFLResource.h"
+
+1191080416 source:c:\dev\projects\4ev_entry\lib\cfl\cflresourcefilter.cpp
+	"CFL.h"
+	"CFLResourceFilter.h"
+	"CFLResource.h"
+	"CFLEnumerator.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\cfl\cflenumerator.h
+
+1191080416 source:c:\dev\projects\4ev_entry\lib\cfl\cfl_delta16.cpp
+	"CFL.h"
+	"CFLResourceFilter.h"
+
+1191080416 source:c:\dev\projects\4ev_entry\lib\cfl\cfl_delta32.cpp
+	"CFL.h"
+	"CFLResourceFilter.h"
+
+1191080416 source:c:\dev\projects\4ev_entry\lib\cfl\cfl_delta8.cpp
+	"CFL.h"
+	"CFLResourceFilter.h"
+
+1191080416 source:c:\dev\projects\4ev_entry\lib\cfl\cfl_none.cpp
+	"CFL.h"
+	"CFLResourceFilter.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_platform.h
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\begin_code.h
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\close_code.h
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_keysym.h
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1191080416 source:c:\dev\projects\4ev_entry\lib\cfl\cfl_zlib.cpp
+	"CFL.h"
+	"CFLResourceFilter.h"
+	"zlib.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\zlib\zlib.h
+	"zconf.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\zlib\zconf.h
+	<windows.h>
+	<sys/types.h>
+	<unistd.h>
+	<unixio.h>
+
+1191080417 source:c:\dev\projects\4ev_entry\lib\sge\sge_blib.cpp
+	"SDL.h"
+	"sge_surface.h"
+	"sge_primitives.h"
+	"sge_blib.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\sge\sge_surface.h
+	"SDL.h"
+	"sge_internal.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\sge\sge_internal.h
+	"sge_config.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\sge\sge_config.h
+
+1191080416 c:\dev\projects\4ev_entry\lib\sge\sge_primitives.h
+	"SDL.h"
+	"sge_internal.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\sge\sge_blib.h
+	"SDL.h"
+	"sge_internal.h"
+
+1198397656 c:\dev\projects\4ev_entry\lib\chipmunk\chipmunk.h
+	"cpVect.h"
+	"cpBB.h"
+	"cpBody.h"
+	"cpArray.h"
+	"cpHashSet.h"
+	"cpSpaceHash.h"
+	"cpShape.h"
+	"cpPolyShape.h"
+	"cpArbiter.h"
+	"cpCollision.h"
+	"cpJoint.h"
+	"cpSpace.h"
+
+1174429702 c:\dev\projects\4ev_entry\lib\chipmunk\cpvect.h
+
+1198396204 c:\dev\projects\4ev_entry\lib\chipmunk\cpbb.h
+
+1174429702 c:\dev\projects\4ev_entry\lib\chipmunk\cpbody.h
+
+1174429702 c:\dev\projects\4ev_entry\lib\chipmunk\cparray.h
+
+1174429702 c:\dev\projects\4ev_entry\lib\chipmunk\cphashset.h
+
+1174429702 c:\dev\projects\4ev_entry\lib\chipmunk\cpspacehash.h
+
+1174429702 c:\dev\projects\4ev_entry\lib\chipmunk\cpshape.h
+
+1174429702 c:\dev\projects\4ev_entry\lib\chipmunk\cppolyshape.h
+
+1174429702 c:\dev\projects\4ev_entry\lib\chipmunk\cparbiter.h
+
+1174429702 c:\dev\projects\4ev_entry\lib\chipmunk\cpcollision.h
+
+1174429702 c:\dev\projects\4ev_entry\lib\chipmunk\cpjoint.h
+
+1174429702 c:\dev\projects\4ev_entry\lib\chipmunk\cpspace.h
+
+1191080416 c:\dev\projects\4ev_entry\lib\sge\sge.h
+	"sge_surface.h"
+	"sge_primitives.h"
+	"sge_misc.h"
+	"sge_tt_text.h"
+	"sge_bm_text.h"
+	"sge_textpp.h"
+	"sge_blib.h"
+	"sge_shape.h"
+	"sge_collision.h"
+	"sge_rotation.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\sge\sge_misc.h
+	"SDL.h"
+	"sge_internal.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\sge\sge_tt_text.h
+	"SDL.h"
+	"sge_internal.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\sge\sge_bm_text.h
+	"SDL.h"
+	"sge_internal.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\sge\sge_textpp.h
+	"SDL.h"
+	"sge_internal.h"
+	<string>
+	<stdio.h>
+	"sge_tt_text.h"
+	"sge_bm_text.h"
+	"sge_shape.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\sge\sge_shape.h
+	"SDL.h"
+	"sge_internal.h"
+	<list>
+	"sge_surface.h"
+	"sge_collision.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\sge\sge_collision.h
+	"SDL.h"
+	"sge_internal.h"
+
+1191080416 c:\dev\projects\4ev_entry\lib\sge\sge_rotation.h
+	"SDL.h"
+	"sge_internal.h"
+
+1147856354 c:\dev\projects\4ev_entry\lib\sdl\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199866290 source:c:\dev\projects\4ev_entry\src\variablemap.cpp
+	"VariableMap.h"
+
+1199866281 c:\dev\projects\4ev_entry\include\variablemap.h
+	<map>
+	<string>
+
+1200181089 source:c:\dev\projects\4ev_entry\lib\mmgr.cpp
+	"precompiled.h"
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	<string.h>
+	<time.h>
+	<stdarg.h>
+	<new>
+	<sysdep/win/wpthread.h>
+	"mmgr.h"
+	"lib.h"
+	"posix.h"
+	"sysdep/debug.h"
+	"nommgr.h"
+
+1200180518 c:\dev\projects\4ev_entry\lib\precompiled.h
+	"config.h"
+	<malloc.h>
+	<new>
+	<memory>
+	<cstring>
+	<string>
+	<cassert>
+	<cctype>
+	<climits>
+	<cmath>
+	<cfloat>
+	<csetjmp>
+	<cstdarg>
+	<cstddef>
+	<cstdio>
+	<cstdlib>
+	<ctime>
+	<cwchar>
+	<algorithm>
+	<deque>
+	<exception>
+	<fstream>
+	<functional>
+	<ios>
+	<iosfwd>
+	<iostream>
+	<list>
+	<map>
+	<numeric>
+	<set>
+	<sstream>
+	<stack>
+	<string>
+	<vector>
+	"mmgr.h"
+
+1107927894 c:\dev\projects\4ev_entry\lib\config.h
+
+1200180574 c:\dev\projects\4ev_entry\lib\mmgr.h
+	"types.h"
+	"nommgr.h"
+
+1102310406 c:\dev\projects\4ev_entry\lib\types.h
+	"posix.h"
+
+1102310406 c:\dev\projects\4ev_entry\lib\posix.h
+	"sysdep/win/wposix.h"
+	"sysdep/win/win.h"
+	<sys/types.h>
+	<limits.h>
+	<unistd.h>
+	<sys/time.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<pthread.h>
+	<sys/mman.h>
+	<aio.h>
+	<errno.h>
+	<dirent.h>
+	<sys/utsname.h>
+	<sys/socket.h>
+	<netdb.h>
+	<netinet/in.h>
+	<netinet/tcp.h>
+	<arpa/inet.h>
+
+1109045614 c:\dev\projects\4ev_entry\lib\sysdep\win\wposix.h
+	<wchar.h>
+	<sys/types.h>
+	<stddef.h>
+	"waio.h"
+	"wsock.h"
+	"wtime.h"
+	"wpthread.h"
+	<errno.h>
+	<sys/stat.h>
+	<sys/stat.h>
+	<sys/stat.h>
+
+1200180635 c:\dev\projects\4ev_entry\lib\sysdep\win\waio.h
+	"types.h"
+	"wposix_types.h"
+
+1200180691 c:\dev\projects\4ev_entry\lib\sysdep\win\wposix_types.h
+	<stdint.h>
+
+1102310406 c:\dev\projects\4ev_entry\lib\sysdep\win\wsock.h
+
+1106357122 c:\dev\projects\4ev_entry\lib\sysdep\win\wtime.h
+
+1106872534 c:\dev\projects\4ev_entry\lib\sysdep\win\wpthread.h
+
+1108975572 c:\dev\projects\4ev_entry\lib\sysdep\win\win.h
+	"config.h"
+	<wchar.h>
+	<stddef.h>
+
+1107927894 c:\dev\projects\4ev_entry\lib\nommgr.h
+
+1200180698 c:\dev\projects\4ev_entry\lib\lib.h
+	<stddef.h>
+	<assert.h>
+	"config.h"
+	"types.h"
+	"sysdep/sysdep.h"
+
+1200181183 c:\dev\projects\4ev_entry\lib\sysdep\sysdep.h
+	"config.h"
+	<stdarg.h>
+	"sysdep/debug.h"
+	"win/win.h"
+	"win/wdbg.h"
+	"unix/unix.h"
+	<ext/hash_map>
+	<hash_map>
+
+1107226408 c:\dev\projects\4ev_entry\lib\sysdep\debug.h
+	"win/wdbg.h"
+	"unix/udbg.h"
+
+1200180843 c:\dev\projects\4ev_entry\lib\sysdep\win\wdbg.h
+	"types.h"
+
+1108845540 c:\dev\projects\4ev_entry\lib\sysdep\unix\udbg.h
+
+1107346700 c:\dev\projects\4ev_entry\lib\sysdep\unix\unix.h
+	"udbg.h"
+
+1190228138 c:\dev\projects\4ev_entry\lib\stdint.h
+	<stddef.h>
+
+1199052374 c:\dev\projects\4ev_entry\lib\sdl\sdl_opengl.h
+	"SDL_config.h"
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<gl.h>
+	<glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<windows.h>
+	<stddef.h>
+
+1200214820 source:c:\dev\projects\4ev_entry\src\gfx_utils.cpp
+	"SDL.h"
+
+1200532511 source:c:\dev\projects\4ev_entry\src\applicationbase.cpp
+	"ApplicationBase.h"
+
+1200532158 c:\dev\projects\4ev_entry\include\applicationbase.h
+	"System.h"
+	"Input.h"
+	"Graphics.h"
+	"ResourceManager.h"
+	"GameWorld.h"
+	"VariableMap.h"
 

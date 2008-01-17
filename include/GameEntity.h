@@ -2,7 +2,7 @@
 #define GAMEENTITY_H
 
 #include <vector.h>
-
+#include <sdl.h>
 
 class GameEntity
 {
@@ -11,6 +11,7 @@ class GameEntity
 		~GameEntity();
 	protected:
 	private:
+		SDL_Surface* _surface;
 		Vector2D _vec;
 };
 
