@@ -1,6 +1,7 @@
 #ifndef INPUT_H
 #define INPUT_H
 #include <vector>
+#include <sdl.h>
 
 class InputHandler;
 class Input
@@ -18,6 +19,7 @@ class Input
 		unsigned char* keys;
 		long long int msgCount;
 		int updateInterval;
+		std::vector<SDL_Event> delayedEventQueue;
 };
 
 class InputHandler
@@ -34,6 +36,9 @@ class InputHandler
 		virtual void onMousePress(int mouse_button, float mouse_x, float mouse_y) {};
 		virtual void onMouseRelease(int mouse_button, float mouse_x, float mouse_y) {};
 		virtual void onMouseWheel(int degrees, float mouse_x, float mouse_y) {};
+		virtual void onMouseFocus(float mouse_x, float mouse_y) {};
+		virtual void onAppClose() {};
+		virtual void onAppMinimize() {};
 	private:
 		int is_dead;
 };

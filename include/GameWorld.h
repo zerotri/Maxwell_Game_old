@@ -2,15 +2,15 @@
 #define GAMEWORLD_H
 
 #include "Graphics.h"
-
-
+typedef struct gameTile_TYPE{
+}gameTile;
 class GameWorld
 {
 	public:
 		GameWorld();
 		~GameWorld();
-		void DrawWorld(SDL_Surface* surface);
-		void DrawTile(int dx, int dy, unsigned char tile, SDL_Surface* surface);
+		void DrawWorld(GfxSurface surface);
+		void DrawTile(int dx, int dy, unsigned char tile, GfxSurface surface);
 		void setGfx(Graphics* gfx);
 	protected:
 	private:

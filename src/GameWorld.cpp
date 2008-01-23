@@ -43,12 +43,12 @@ void GameWorld::setGfx(Graphics* gfx)
 {
 	_gfx = gfx;
 }
-void GameWorld::DrawWorld(SDL_Surface* surface)
+void GameWorld::DrawWorld(GfxSurface surface)
 {
 	unsigned int _x, _y;
-	unsigned int surface_w = (surface->w);
+	unsigned int surface_w = _gfx->Surface_GetWidth(surface);
 	unsigned int tile_x, tile_y, tile;
-	SDL_Rect tileRect = {0,0,32,32};
+	Rect tileRect = {0,0,32,32};
 	for(_x=0;_x<MAP_W;_x++)
 	{
 		for(_y=0;_y<MAP_H;_y++)
@@ -66,9 +66,9 @@ void GameWorld::DrawWorld(SDL_Surface* surface)
 		}
 	}
 }
-void GameWorld::DrawTile(int dx, int dy, unsigned char tile, SDL_Surface* surface)
+void GameWorld::DrawTile(int dx, int dy, unsigned char tile, GfxSurface surface)
 {
-	unsigned int surface_w = (surface->w)>>5;
+	unsigned int surface_w = (_gfx->Surface_GetWidth(surface))>>5;
 	unsigned int tile_x = tile % surface_w;
 	unsigned int tile_y = 0;
 	if(tile!=0)

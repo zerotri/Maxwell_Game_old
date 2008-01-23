@@ -6,26 +6,30 @@
 #include "ResourceManager.h"
 #include "GameWorld.h"
 #include "VariableMap.h"
+#include "API_Base.h"
 
-class ApplicationBase : public InputHandler, public SysCallBack
+class ApplicationBase : public InputHandler, public SysCallBack, public RenderCallback
 {
 	public:
 		ApplicationBase();
 		virtual ~ApplicationBase();
 		bool _FrameFunc();
+		bool _Render();
 		bool Run();
 		bool Shutdown();
 		virtual bool FrameFunc();
+		virtual bool RenderFunc();
 		virtual bool Init();
 		virtual bool End();
 
 		//Members
-		System _System;
-		ResourceManager _ResourceManager;
-		Input _Input;
-		Graphics _Graphics;
-		//VariableMap _VariableMap;
-		GameWorld _GameWorld;
+		API_Base* _Api;
+		System* _System;
+		ResourceManager* _ResourceManager;
+		Input* _Input;
+		Graphics* _Graphics;
+		VariableMap* _VariableMap;
+		GameWorld* _GameWorld;
 	protected:
 	private:
 };

@@ -1,5 +1,4 @@
 #include "Input.h"
-#include <sdl.h>
 #define INPUT_LOOP_ITERATOR(funcname, ...)\
 		for(;vInputIterator!= vInputHandlers.end();vInputIterator++)\
 		{\
@@ -20,6 +19,7 @@ Input::~Input()
 	std::vector<InputHandler*>::iterator vInputIterator = vInputHandlers.begin();
 	INPUT_LOOP_ITERATOR(Destroy);
 	vInputHandlers.clear();
+	delayedEventQueue.clear();
 }
 void Input::Query()
 {

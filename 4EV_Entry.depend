@@ -154,28 +154,32 @@
 	<windows.h>
 	<gl/gl.h>
 
-1200200632 source:c:\dev\projects\4ev_entry\src\gameanimation.cpp
+1201065184 source:c:\dev\projects\4ev_entry\src\gameanimation.cpp
 	"GameAnimation.h"
 	"utils.h"
 
-1200200625 c:\dev\projects\4ev_entry\include\gameanimation.h
-	<sdl.h>
-	"Graphics.h"
+1201065218 c:\dev\projects\4ev_entry\include\gameanimation.h
+	"main.h"
 
-1199864800 c:\dev\projects\4ev_entry\include\utils.h
+1200632777 c:\dev\projects\4ev_entry\include\utils.h
 
-1199092866 source:c:\dev\projects\4ev_entry\src\gameentity.cpp
+1201075268 source:c:\dev\projects\4ev_entry\src\gameentity.cpp
 	"GameEntity.h"
+	"utils.h"
+	"mgame_config.h"
 
-1199760859 c:\dev\projects\4ev_entry\include\gameentity.h
+1201064660 c:\dev\projects\4ev_entry\include\gameentity.h
 	<vector.h>
 	<sdl.h>
+	<map>
+	<string>
+	"Graphics.h"
 
-1200201083 source:c:\dev\projects\4ev_entry\src\gameworld.cpp
+1201072903 source:c:\dev\projects\4ev_entry\src\gameworld.cpp
 	"GameWorld.h"
 	<math.h>
 
-1200083499 c:\dev\projects\4ev_entry\include\gameworld.h
+1201064571 c:\dev\projects\4ev_entry\include\gameworld.h
 	"Graphics.h"
 
 1198736949 c:\dev\projects\4ev_entry\include\gamemodel.h
@@ -225,12 +229,12 @@
 	<tchar.h>
 	<wchar.h>
 
-1200198766 source:c:\dev\projects\4ev_entry\src\input.cpp
+1200632727 source:c:\dev\projects\4ev_entry\src\input.cpp
 	"Input.h"
-	<sdl.h>
 
-1200198780 c:\dev\projects\4ev_entry\include\input.h
+1200730471 c:\dev\projects\4ev_entry\include\input.h
 	<vector>
+	<sdl.h>
 
 1198371689 source:c:\dev\projects\4ev_entry\src\luavm.cpp
 	"LuaVM.h"
@@ -244,17 +248,18 @@
 
 1198366888 source:c:\dev\projects\4ev_entry\src\lua_utils.cpp
 
-1199864861 source:c:\dev\projects\4ev_entry\src\utils.cpp
+1201075225 source:c:\dev\projects\4ev_entry\src\utils.cpp
 	"utils.h"
 	<math.h>
 	<stdarg.h>
 	<stdio.h>
+	<System.h>
 
-1198110500 source:c:\dev\projects\4ev_entry\src\vector.cpp
+1200685628 source:c:\dev\projects\4ev_entry\src\vector.cpp
 	"vector.h"
 	<math.h>
 
-1198115137 c:\dev\projects\4ev_entry\include\vector.h
+1200686901 c:\dev\projects\4ev_entry\include\vector.h
 	<math.h>
 
 1192134014 source:c:\dev\projects\4ev_entry\src\xmlparser.cpp
@@ -296,9 +301,12 @@
 
 1197793414 c:\dev\projects\4ev_entry\include\lualink.h
 
-1200532484 source:c:\dev\projects\4ev_entry\src\main.cpp
+1201077016 source:c:\dev\projects\4ev_entry\src\main.cpp
 	"main.h"
 	"ApplicationBase.h"
+	"GameEntity.h"
+	"StateManager.h"
+	"GameState.h"
 
 1184975834 c:\dev\projects\4ev_entry\include\hge\hgefont.h
 	"hge.h"
@@ -315,15 +323,12 @@
 	"hgesprite.h"
 	"hgerect.h"
 
-1199863301 c:\dev\projects\4ev_entry\include\main.h
+1201067230 c:\dev\projects\4ev_entry\include\main.h
 	<sdl.h>
 	<sdl_image.h>
+	<sge.h>
 	"vector.h"
-	<lua.h>
-	"lualib.h"
-	"lauxlib.h"
-	"lua_utils.h"
-	"LuaVM.h"
+	"ScriptVM.h"
 	"Input.h"
 	"System.h"
 	"Graphics.h"
@@ -333,22 +338,24 @@
 
 1198366892 c:\dev\projects\4ev_entry\include\lua_utils.h
 
-1200531094 source:c:\dev\projects\4ev_entry\src\system.cpp
+1201075248 source:c:\dev\projects\4ev_entry\src\system.cpp
 	"System.h"
-
-1200532057 c:\dev\projects\4ev_entry\include\system.h
-	<sdl.h>
 	<stdarg.h>
 	<stdio.h>
 
-1200531486 c:\dev\projects\4ev_entry\include\resourcemanager.h
-	<main.h>
+1201075234 c:\dev\projects\4ev_entry\include\system.h
+	"API_Base.h"
+	<stdio.h>
+
+1201074383 c:\dev\projects\4ev_entry\include\resourcemanager.h
+	"main.h"
+	"API_Base.h"
 	<map>
 	<string>
 
-1200531677 source:c:\dev\projects\4ev_entry\src\resourcemanager.cpp
+1201074628 source:c:\dev\projects\4ev_entry\src\resourcemanager.cpp
 	"ResourceManager.h"
-	"system.h"
+	"utils.h"
 
 1199269522 source:c:\dev\projects\4ev_entry\include\hge\hgeguictrls2.cpp
 	"hgeguictrls2.h"
@@ -364,18 +371,16 @@
 	"hge.h"
 	<math.h>
 
-1200530170 source:c:\dev\projects\4ev_entry\src\graphics.cpp
+1201077063 source:c:\dev\projects\4ev_entry\src\graphics.cpp
 	"Graphics.h"
 	<time.h>
 	<math.h>
 	<stdio.h>
 	<string.h>
-	<sge.h>
 
-1200532106 c:\dev\projects\4ev_entry\include\graphics.h
-	<sdl.h>
-	"utils.h"
-	<sge.h>
+1201072876 c:\dev\projects\4ev_entry\include\graphics.h
+	"main.h"
+	"API_Base.h"
 
 1187669202 c:\dev\projects\4ev_entry\include\cairo\cairo.h
 	<cairo-features.h>
@@ -1548,14 +1553,148 @@
 1200214820 source:c:\dev\projects\4ev_entry\src\gfx_utils.cpp
 	"SDL.h"
 
-1200532511 source:c:\dev\projects\4ev_entry\src\applicationbase.cpp
+1201077034 source:c:\dev\projects\4ev_entry\src\applicationbase.cpp
 	"ApplicationBase.h"
+	"API_SDL.h"
 
-1200532158 c:\dev\projects\4ev_entry\include\applicationbase.h
+1201076938 c:\dev\projects\4ev_entry\include\applicationbase.h
 	"System.h"
 	"Input.h"
 	"Graphics.h"
 	"ResourceManager.h"
 	"GameWorld.h"
 	"VariableMap.h"
+	"API_Base.h"
+
+1200767291 c:\dev\projects\4ev_entry\include\scriptvm.h
+	<vector>
+	<string>
+	<squirrel.h>
+
+1200767304 source:c:\dev\projects\4ev_entry\src\scriptvm.cpp
+	"ScriptVM.h"
+	"sqstdmath.h"
+	"sqstdaux.h"
+	"sqstdstring.h"
+	"sqstdio.h"
+	<stdarg.h>
+	<stdio.h>
+
+1173634210 c:\dev\projects\4ev_entry\lib\squirrel\\squirrel.h
+
+1154164968 source:c:\dev\projects\4ev_entry\lib\squirrel\sqstdaux.cpp
+	<squirrel.h>
+	<sqstdaux.h>
+	<assert.h>
+
+1101546680 c:\dev\projects\4ev_entry\lib\squirrel\\sqstdaux.h
+
+1134842442 source:c:\dev\projects\4ev_entry\lib\squirrel\sqstdmath.cpp
+	<squirrel.h>
+	<math.h>
+	<stdlib.h>
+	<sqstdmath.h>
+
+1101546680 c:\dev\projects\4ev_entry\lib\squirrel\\sqstdmath.h
+
+1142689840 source:c:\dev\projects\4ev_entry\lib\squirrel\sqstdstring.cpp
+	<squirrel.h>
+	<sqstdstring.h>
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<ctype.h>
+	<assert.h>
+
+1155661728 c:\dev\projects\4ev_entry\lib\squirrel\\sqstdstring.h
+
+1142674562 source:c:\dev\projects\4ev_entry\lib\squirrel\sqstdio.cpp
+	<new>
+	<stdio.h>
+	<squirrel.h>
+	<sqstdio.h>
+	"sqstdstream.h"
+
+1121272442 c:\dev\projects\4ev_entry\lib\squirrel\\sqstdio.h
+
+1137274166 c:\dev\projects\4ev_entry\lib\squirrel\sqstdstream.h
+
+1173634210 c:\dev\projects\4ev_entry\lib\squirrel\squirrel.h
+
+1101546680 c:\dev\projects\4ev_entry\lib\squirrel\sqstdaux.h
+
+1121272442 c:\dev\projects\4ev_entry\lib\squirrel\sqstdio.h
+
+1101546680 c:\dev\projects\4ev_entry\lib\squirrel\sqstdmath.h
+
+1155661728 c:\dev\projects\4ev_entry\lib\squirrel\sqstdstring.h
+
+1200767334 source:c:\dev\projects\4ev_entry\src\statemanager.cpp
+	"StateManager.h"
+	"GameState.h"
+
+1200766972 c:\dev\projects\4ev_entry\include\statemanager.h
+	<vector>
+
+1200767042 c:\dev\projects\4ev_entry\include\gamestate.h
+
+1173615308 source:c:\dev\projects\4ev_entry\lib\squirrel\sqstdblob.cpp
+	<new>
+	<squirrel.h>
+	<sqstdio.h>
+	<string.h>
+	<sqstdblob.h>
+	"sqstdstream.h"
+	"sqstdblobimpl.h"
+
+1121272292 c:\dev\projects\4ev_entry\lib\squirrel\sqstdblob.h
+
+1141572658 c:\dev\projects\4ev_entry\lib\squirrel\sqstdblobimpl.h
+
+1156081318 source:c:\dev\projects\4ev_entry\lib\squirrel\sqstdrex.cpp
+	<squirrel.h>
+	<string.h>
+	<ctype.h>
+	<setjmp.h>
+	"sqstdstring.h"
+	<stdio.h>
+
+1147030278 source:c:\dev\projects\4ev_entry\lib\squirrel\sqstdstream.cpp
+	<new>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<squirrel.h>
+	<sqstdio.h>
+	<sqstdblob.h>
+	"sqstdstream.h"
+	"sqstdblobimpl.h"
+
+1130943052 source:c:\dev\projects\4ev_entry\lib\squirrel\sqstdsystem.cpp
+	<squirrel.h>
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	<sqstdsystem.h>
+	<wchar.h>
+
+1121272292 c:\dev\projects\4ev_entry\lib\squirrel\sqstdsystem.h
+
+1200986776 c:\dev\projects\4ev_entry\mgame_config.h
+
+1201076506 c:\dev\projects\4ev_entry\include\api_base.h
+	"main.h"
+
+1201076650 source:c:\dev\projects\4ev_entry\src\api_base.cpp
+	"API_Base.h"
+
+1201077283 source:c:\dev\projects\4ev_entry\src\api_sdl.cpp
+	"API_SDL.h"
+	<sdl.h>
+	<sdl_image.h>
+	"utils.h"
+
+1201076512 c:\dev\projects\4ev_entry\include\api_sdl.h
+	"API_Base.h"
+	<sge.h>
 

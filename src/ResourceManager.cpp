@@ -1,5 +1,5 @@
 #include "ResourceManager.h"
-#include "system.h"
+#include "utils.h"
 
 ResourceManager::ResourceManager()
 {
@@ -7,6 +7,11 @@ ResourceManager::ResourceManager()
 
 ResourceManager::~ResourceManager()
 {
+	DestroyResources();
+}
+void ResourceManager::SetAPI(API_Base* _api)
+{
+	api = _api;
 }
 void ResourceManager::DestroyResources()
 {
@@ -14,25 +19,25 @@ void ResourceManager::DestroyResources()
 	for(;deleteResource!=ResourceMap.end();deleteResource++)
 	{
 		_deleteResource(&deleteResource->second);
-		System::Log("Resource '%s' successfully freed!",deleteResource->first.c_str());
+		Log("Resource '%s' successfully freed!",deleteResource->first.c_str());
 	}
 	ResourceMap.clear();
 }
 
-SDL_Surface* ResourceManager::LoadTexture(char* filename, char* rsrcname)
+GfxSurface ResourceManager::LoadTexture(char* filename, char* rsrcname)
 {
 	Resource rsrc;
 	rsrc.type = RSRC_SURFACE;
-	rsrc.rsrc.surface = SDL_DisplayFormatAlpha(IMG_Load(filename));
+	rsrc.rsrc.surface = api->Surface_Load(filename);
 	if(rsrc.rsrc.surface!=0)
 	{
 		std::string name(rsrcname);
 		ResourceMap[name] = rsrc;
-		System::Log("Resource '%s' successfully loaded!",name.c_str());
+		Log("Resource '%s' successfully loaded!",name.c_str());
 	}
 	else
 	{
-		System::Log("Failed to load resource '%s' from file: '%s'",rsrcname,filename);
+		Log("Failed to load resource '%s' from file: '%s'",rsrcname,filename);
 		return 0;
 	}
 	return rsrc.rsrc.surface;
@@ -42,7 +47,7 @@ void ResourceManager::_deleteResource(Resource* rsrc)
 	switch(rsrc->type)
 	{
 		case RSRC_SURFACE:
-			SDL_FreeSurface(rsrc->rsrc.surface);
+			api->Surface_Free(rsrc->rsrc.surface);
 		break;
 		case RSRC_DATA:
 		break;

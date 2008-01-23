@@ -2,7 +2,8 @@
 #define RESOURCEMANAGER_H
 
 #define INCLUDE_LIBS_ONLY
-#include <main.h>
+#include "main.h"
+#include "API_Base.h"
 #include <map>
 #include <string>
 //An enumeration of all the resource types, so we
@@ -17,7 +18,7 @@ typedef enum ResourceType_Enum{
 typedef struct Resource_Struct{
 	ResourceType type;
 	union{
-		SDL_Surface* surface;
+		GfxSurface surface;
 		char* data;
 	}rsrc;
 }Resource;
@@ -28,12 +29,14 @@ class ResourceManager
 		~ResourceManager();
 		void DestroyResources();
 		Resource& operator[] (char* resourcename);
-		SDL_Surface* LoadTexture(char* filename, char* rsrcname);
+		GfxSurface LoadTexture(char* filename, char* rsrcname);
+		void SetAPI(API_Base* _api);
 
 	protected:
 	private:
 		void _deleteResource(Resource* rsrc);
 		std::map<std::string,Resource> ResourceMap;
+		API_Base* api;
 };
 
 

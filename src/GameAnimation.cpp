@@ -43,7 +43,7 @@ void GameAnimation::update(float updateTime)
 		}*/
 	}
 }
-void GameAnimation::drawCurrentFrame(int x, int y, SDL_Surface* drawTexture)
+void GameAnimation::drawCurrentFrame(int x, int y, GfxSurface drawTexture)
 {
 	if(baseAnimation == NULL)
 		return;

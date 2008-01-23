@@ -1,11 +1,10 @@
 #ifndef GAMEANIMATION_H
 #define GAMEANIMATION_H
-#include <sdl.h>
-#include "Graphics.h"
+#include "main.h"
 
 typedef struct ANIM_type
 {
-	SDL_Surface* pSurf;
+	GfxSurface pSurf;
 	float uTop;
 	float uLeft;
 	float uBottom;
@@ -20,14 +19,14 @@ class GameAnimation
 		GameAnimation();
 		~GameAnimation();
 		void update(float updateTime);
-		void drawCurrentFrame(int x, int y, SDL_Surface* drawTexture = 0);
+		void drawCurrentFrame(int x, int y, GfxSurface drawTexture = 0);
 		void setAnimation(ANIM* baseAnim);
 		void setGraphics(Graphics* _gfx);
 	protected:
 	private:
 	ANIM *baseAnimation;
-	Graphics* gfx;
 	float fTimeLeft;
+	Graphics* gfx;
 };
 
 

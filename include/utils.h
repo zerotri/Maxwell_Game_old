@@ -9,6 +9,8 @@
 												__name.uLeft = (__l);\
 												__name.uBottom = (__b);\
 												__name.uRight = (__r)
+#define LONGLONGUNSIGNED(x) x##LLU
+#define LONGLONGSIGNED(x) x##LL
 void Log(char* format,...);
 
 #endif

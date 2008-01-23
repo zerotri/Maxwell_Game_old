@@ -9,31 +9,89 @@
 //#include "chipmunk.h"
 #include "main.h"
 #include "ApplicationBase.h"
+#include "GameEntity.h"
+#include "StateManager.h"
+#include "GameState.h"
 
 //Lua Function Prototypes
-int l_PrintText( lua_State* luaVM);
+/*int l_PrintText( lua_State* luaVM);
 int l_GetKeystate( lua_State* luaVM);
 int l_DrawLine( lua_State* luaVM);
-void loadLua(LuaVM* lua);
+void loadLua(LuaVM* lua);*/
+class IntroState : public GameState
+{
+	private:
+		float INTRO_TIME;
+
+   public:
+      IntroState();
+      ~IntroState();
+
+      void initialize();
+      void shutdown();
+
+      bool update(float delta);
+      void render();
+
+   private:
+      float _elapsedTime;
+};
+
+IntroState::IntroState() : _elapsedTime(0.0f)
+{
+	INTRO_TIME = 5.0f;
+}
+
+void IntroState::initialize()
+{
+   // load up whatever resources I need (background, sounds, etc)
+}
+
+void IntroState::shutdown()
+{
+   // release whatever resources I loaded in initialize
+}
+
+bool IntroState::update(float delta)
+{
+   _elapsedTime += delta;
+
+   if (_elapsedTime >= INTRO_TIME)
+   {
+      // if we've been here long enough, move on to the menu state
+      //StateManager::getInstance()->popState();
+      //StateManager::getInstance()->pushState(new MenuState());
+   }
+
+   return true;
+}
+
+void IntroState::render()
+{
+   // render our background, etc.
+}
+
 class MainApplication : public ApplicationBase
 {
 	public:
 	bool bRunning;
 	ANIM gAnims[2];
 	GameAnimation sprAnim;
+	GameEntity entity;
 	Resource rsrc;
 	Resource wrldTs;
 	bool Init()
 	{
 		bRunning = true;
 		//Set up all System-related stuff. I need to clean this all up later.
-		loadLua(&lua);
+		//loadLua(&lua);
 
-		/*spr1 = _ResourceManager.LoadTexture("spr1.png","spr1");
-		spr2 = _ResourceManager.LoadTexture("spr3.png","spr2");
-		spr3 = _ResourceManager.LoadTexture("ts_01.png","ts_01");
-		rsrc = _ResourceManager["spr1"];
-		wrldTs = _ResourceManager["ts_01"];
+		spr1 = _ResourceManager->LoadTexture("spr1.png","spr1");
+		spr2 = _ResourceManager->LoadTexture("spr3.png","spr2");
+		spr3 = _ResourceManager->LoadTexture("ts_01.png","ts_01");
+		spr4 = _ResourceManager->LoadTexture("spr2.png","spr3");
+		rsrc = (*_ResourceManager)["spr1"];
+		wrldTs = (*_ResourceManager)["ts_01"];
 		// Starts running FrameFunc().
 		// Note that the execution "stops" here
 		// until "true" is returned from FrameFunc().
@@ -46,25 +104,28 @@ class MainApplication : public ApplicationBase
 		gAnims[0].lpNext = &gAnims[1];
 		gAnims[1].lpNext = &gAnims[0];
 		sprAnim.setAnimation(&gAnims[0]);
-		sprAnim.setGraphics(&_Graphics);*/
+		sprAnim.setGraphics(_Graphics);
+		entity.SetPos(32,32);
+		entity.SetSurface(spr4);
+		return true;
+	}
+	bool RenderFunc()
+	{
+		_GameWorld->DrawWorld(wrldTs.rsrc.surface);
+		sprAnim.update(_System->getFrameTime());
+		sprAnim.drawCurrentFrame(128,128);
+		entity.Draw(_Graphics);
+		_Graphics->DrawString(0,0,"FPS: %i",(int)_System->FPS());
+		_Graphics->DrawString(32,32,"Hello SGE World!\nTesting Multiline Strings");
 		return true;
 	}
 	bool FrameFunc()
 	{
-		_Input.Query();
-		//gfx.DrawString(0.0f,20.0f,"Input->MsgCount: %i",sys.getInput().GetMsgCount());
-		//gfx.DrawSurface(32,32,rsrc.rsrc.surface);
-		// Process window messages if not in "child mode"
-		// (if in "child mode" the parent application will do this for us)
-		//_GameWorld.DrawWorld(wrldTs.rsrc.surface);
-		//sprAnim.update(_System.getFrameTime());
-		//sprAnim.drawCurrentFrame(128,128);
-		_Graphics.Render();
-		_Graphics.DrawString(0,0,"FPS: %i",(int)_System.FPS());
-		_Graphics.DrawString(32,32,"Hello SGE World!\nWynter is %i", 17);
+		_Input->Query();
+		_Graphics->Render();
 
-		lua.callFunction("draw");
-		lua.run();
+		/*lua.callFunction("draw");
+		lua.run();*/
 
 		return bRunning;
 	}
@@ -88,8 +149,8 @@ class MainApplication : public ApplicationBase
 	void onMouseWheel(int degrees, float mouse_x, float mouse_y)
 	{
 	};
-	SDL_Surface* spr1, *spr2, *spr3;
-	LuaVM lua;
+	GfxSurface spr1, spr2, spr3, spr4;
+	//LuaVM lua;
 };
 
 
@@ -97,22 +158,22 @@ int main(int argc, char** argv)
 {
 	putenv("SDL_VIDEODRIVER=directx");
 	MainApplication MainApp;
-	bool returnval = MainApp.Run();
-	MainApp.~ApplicationBase();
-	return returnval;
+	MainApp.Run();
+	//MainApp.~ApplicationBase();
+	return false;
 }
 
-int l_GetKeystate( lua_State* luaVM)
+/*int l_GetKeystate( lua_State* luaVM)
 {
 	//lua_pushnumber( luaVM, (lua_Number)input->GetKeyState((int)lua_tonumber(luaVM, -1)));
 	return true;
 }
 int l_DrawLine( lua_State* luaVM)
 {
-	/*gfx->DrawLine(	(int)lua_tonumber(luaVM, -4),
-					(int)lua_tonumber(luaVM, -3),
-					(int)lua_tonumber(luaVM, -2),
-					(int)lua_tonumber(luaVM, -1));*/
+	//gfx->DrawLine(	(int)lua_tonumber(luaVM, -4),
+	//				(int)lua_tonumber(luaVM, -3),
+	//				(int)lua_tonumber(luaVM, -2),
+	//				(int)lua_tonumber(luaVM, -1));
 	return true;
 
 }
@@ -151,3 +212,4 @@ void loadLua(LuaVM* lua){
 		Log("Cannot run lua file: %s", lua->getString(-1));
 	}else lua->run();
 }
+*/
