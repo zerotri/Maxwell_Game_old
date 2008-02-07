@@ -1,9 +1,10 @@
 #include "ApplicationBase.h"
-#include "API_SDL.h"
+#include "API_Base.h"
 
-ApplicationBase::ApplicationBase()
+ApplicationBase::ApplicationBase(API_Base* api)
 {
-	_Api = new API_SDL();
+	_Api = api;
+	_Api->Sys_SetCallBack(this);
 	_System = new System();
 	_Input = new Input();
 	_Graphics = new Graphics();
@@ -12,6 +13,7 @@ ApplicationBase::ApplicationBase()
 	_GameWorld = new GameWorld();
 	_System->SetAPI(_Api);
 	_Graphics->SetAPI(_Api);
+	_Input->SetAPI(_Api);
 	_ResourceManager->SetAPI(_Api);
 }
 bool ApplicationBase::Run()
@@ -26,7 +28,10 @@ bool ApplicationBase::Run()
 		Init();
 		_GameWorld->setGfx(_Graphics);
 		_System->Log("Running System");
-		_System->Run();
+		//if(Sys_RunConstant
+		{
+			_System->Run();
+		}
 	}
 	else
 	{
@@ -50,7 +55,10 @@ bool ApplicationBase::End()
 }
 bool ApplicationBase::_FrameFunc()
 {
-		return FrameFunc();
+		bool ret = FrameFunc();
+		_Input->Query();
+		_Graphics->Render();
+		return ret;
 }
 bool ApplicationBase::_Render()
 {

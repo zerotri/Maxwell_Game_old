@@ -1,0 +1,56 @@
+Creating ApplicatinBase@[0x0022fd30]
+Initializing ApplicatinBase::_System@[0x003dd1d0]
+	tsurf[width] = 379
+	tsurf[height] = 291
+Load Resource: 'logo' [430 KBytes] 
+	at location: [4062752]
+	at location: [4062752]
+Running System
+System::Run()! Running Main Loop
+	tsurf[width] = 96
+	tsurf[height] = 96
+Load Resource: 'spr1' [36 KBytes] 
+	at location: [22007624]
+	at location: [22007624]
+	tsurf[width] = 96
+	tsurf[height] = 96
+Load Resource: 'spr2' [36 KBytes] 
+	at location: [22011336]
+	at location: [22011336]
+	tsurf[width] = 96
+	tsurf[height] = 128
+Load Resource: 'ts_01' [48 KBytes] 
+	at location: [22011824]
+	at location: [22011824]
+	tsurf[width] = 96
+	tsurf[height] = 96
+Load Resource: 'spr3' [36 KBytes] 
+	at location: [25315200]
+	at location: [25315200]
+rsrc1 = 22007624
+Rsrc1.size() = 36932
+Memory Usage: 0.573387 MBytes
+Mousemove: 248, 1
+Mousemove: 248, 0
+FPS: 392
+FPS: 152
+FPS: 231
+FPS: 421
+FPS: 422
+FPS: 417
+FPS: 421
+FPS: 423
+FPS: 423
+FPS: 425
+FPS: 420
+FPS: 425
+FPS: 425
+Keypress: 
+Keyrelease: 
+Keypress: 
+Shutting Down...
+Resource 'logo' successfully freed!
+Resource 'spr1' successfully freed!
+Resource 'spr2' successfully freed!
+Resource 'spr3' successfully freed!
+Resource 'ts_01' successfully freed!

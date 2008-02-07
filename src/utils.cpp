@@ -13,5 +13,8 @@ void Log(char* format,...)
 	va_start(ap, format);
 	vsprintf(_strbuf,format, ap); /// Call vprintf
 	va_end(ap); /// Cleanup the va_list
-	LogSys->Log("%s\n",_strbuf);
+	LogSys->Log("%s",_strbuf);
+	#ifdef MGAME_DEBUG
+		//printf("%s",_strbuf);
+	#endif
 }

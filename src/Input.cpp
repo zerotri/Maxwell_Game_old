@@ -11,7 +11,6 @@ Input::Input()
 {
 	vInputHandlers.reserve(8);
 	msgCount = 0;
-	keys = SDL_GetKeyState(NULL);
 }
 
 Input::~Input()
@@ -19,68 +18,63 @@ Input::~Input()
 	std::vector<InputHandler*>::iterator vInputIterator = vInputHandlers.begin();
 	INPUT_LOOP_ITERATOR(Destroy);
 	vInputHandlers.clear();
-	delayedEventQueue.clear();
 }
 void Input::Query()
 {
-	SDL_Event evt;
+	if(!api)
+		return;
+	InputEvent evt;
+	evt.type = InputEvent::Evt_None;
 	std::vector<InputHandler*>::iterator vInputIterator;
-	while(SDL_PollEvent(&evt))
+	while(api->Input_GetEvent(&evt))
 	{
 		msgCount++;
 		vInputIterator = vInputHandlers.begin();
 		switch(evt.type)
 		{
-			case SDL_KEYDOWN:
+			case InputEvent::Evt_KeyPress:
 				INPUT_LOOP_ITERATOR(onKeyPress,
-									evt.key.keysym.sym,
-									evt.key.keysym.mod,
-									evt.key.keysym.scancode);
+									evt.key.keyboard_key,
+									evt.key.keyboard_flag,
+									evt.key.keyboard_char);
 			break;
-			case SDL_KEYUP:
+			case InputEvent::Evt_KeyRelease:
 				INPUT_LOOP_ITERATOR(onKeyRelease,
-									evt.key.keysym.sym,
-									evt.key.keysym.mod,
-									evt.key.keysym.scancode);
+									evt.key.keyboard_key,
+									evt.key.keyboard_flag,
+									evt.key.keyboard_char);
 			break;
-			case SDL_MOUSEBUTTONDOWN:
+			case InputEvent::Evt_MousePress:
 				INPUT_LOOP_ITERATOR(onMousePress,
-									evt.button.button,
-									evt.button.x,
-									evt.button.y);
+									evt.mouse.button,
+									evt.mouse.x,
+									evt.mouse.y);
 			break;
-			case SDL_MOUSEBUTTONUP:
-				if(evt.button.button == SDL_BUTTON_WHEELUP)
-				{
-					INPUT_LOOP_ITERATOR(onMouseWheel, +1,
-										evt.button.x,
-										evt.button.y);
-				}
-				else if(evt.button.button == SDL_BUTTON_WHEELDOWN)
-				{
-					INPUT_LOOP_ITERATOR(onMouseWheel, -1,
-										evt.button.x,
-										evt.button.y);
-				}
-				else
-				{
-					INPUT_LOOP_ITERATOR(onMouseRelease,
-										evt.button.button,
-										evt.button.x,
-										evt.button.y);
-				}
+			case InputEvent::Evt_MouseRelease:
+				INPUT_LOOP_ITERATOR(onMouseRelease,
+										evt.mouse.button,
+										evt.mouse.x,
+										evt.mouse.y);
 			break;
-			case SDL_MOUSEMOTION:
+			case InputEvent::Evt_MouseWheel:
+					INPUT_LOOP_ITERATOR(onMouseWheel,
+										evt.mouse.degrees,
+										evt.mouse.x,
+										evt.mouse.y);
+			break;
+			case InputEvent::Evt_MouseMove:
 				INPUT_LOOP_ITERATOR(onMouseMove,
-									evt.motion.x,
-									evt.motion.y);
+									evt.mouse.x,
+									evt.mouse.y);
+			break;
+			default:
 			break;
 		}
 	}
 }
 bool Input::GetKeyState(unsigned char key)
 {
-	return (keys[key] == 1);
+	return api->Input_GetKeyState(key);
 }
 void Input::AddInputHandler(InputHandler* newInput)
 {
@@ -92,5 +86,7 @@ int Input::GetMsgCount()
 {
 	return msgCount;
 }
-
-
+void Input::SetAPI(API_Base* _api)
+{
+	api = _api;
+}

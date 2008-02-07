@@ -28,13 +28,14 @@ void GameEntity::SetPos(int x, int y)
 	worldPos.SetPoints(x,y);
 }
 
-int& GameEntityContainer::operator [] (std::string name)
+/*int& GameEntityContainer::operator [] (std::string name)
 {
+	return 1;
 }
 
 GameEntity& GameEntityContainer::operator [] (int id)
 {
-
+	return NULL;
 }
 
 void GameEntityContainer::AddEntity(GameEntity ent)
@@ -44,5 +45,5 @@ void GameEntityContainer::AddEntity(GameEntity ent)
 
 GameEntity& GameEntityContainer::CreateEntity()
 {
-
-}
+	return NULL;
+}*/

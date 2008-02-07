@@ -2,7 +2,6 @@
 #define GAMEENTITY_H
 
 #include <vector.h>
-#include <sdl.h>
 #include <map>
 #include <string>
 #include "Graphics.h"
@@ -15,6 +14,10 @@ class GameEntity
 		void Draw(Graphics* _gfx);
 		void SetSurface(GfxSurface _surface);
 		void SetPos(int x, int y);
+		int  GetX();
+		int  GetY();
+		void SetX(int x);
+		void SetY(int y);
 	protected:
 	private:
 		long long int entityID;

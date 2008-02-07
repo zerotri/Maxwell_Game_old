@@ -18,14 +18,14 @@ class GameAnimation
 	public:
 		GameAnimation();
 		~GameAnimation();
-		void update(float updateTime);
+		void update(time_type updateTime);
 		void drawCurrentFrame(int x, int y, GfxSurface drawTexture = 0);
 		void setAnimation(ANIM* baseAnim);
 		void setGraphics(Graphics* _gfx);
 	protected:
 	private:
 	ANIM *baseAnimation;
-	float fTimeLeft;
+	time_type fTimeLeft;
 	Graphics* gfx;
 };
 

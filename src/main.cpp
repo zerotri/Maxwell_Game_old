@@ -8,158 +8,207 @@
 
 //#include "chipmunk.h"
 #include "main.h"
-#include "ApplicationBase.h"
-#include "GameEntity.h"
-#include "StateManager.h"
-#include "GameState.h"
+#ifdef APIMODE_SDL
+	#include "API_SDL.h"
+	#define API_MODE API_SDL
+#endif
+#ifdef APIMODE_HGE
+	#include "API_HGE.h"
+	#define API_MODE API_HGE
+#endif
+#ifdef APIMODE_SDLAGG
+	#include "API_SDLAGG.h"
+	#define API_MODE API_SDLAGG
+#endif
 
 //Lua Function Prototypes
 /*int l_PrintText( lua_State* luaVM);
 int l_GetKeystate( lua_State* luaVM);
 int l_DrawLine( lua_State* luaVM);
 void loadLua(LuaVM* lua);*/
+class InGameState : public GameState
+{
+    private:
+        ANIM gAnims[2];
+        GameAnimation sprAnim;
+        GameEntity entity;
+		Resource* wrldTs;
+        Resource* rsrc1,* rsrc2,* rsrc3,* rsrc4;
+        GfxSurface spr1, spr2, spr3, spr4;
+
+    public:
+        InGameState(){};
+        virtual ~InGameState(){};
+
+        void initialize(ApplicationBase* _app){
+            app = _app;
+            //Load all resources
+            rsrc1 = _app->_ResourceManager->LoadResource("spr1.png","spr1");
+            rsrc2 = _app->_ResourceManager->LoadResource("spr3.png","spr2");
+            rsrc3 = _app->_ResourceManager->LoadResource("ts_01.png","ts_01");
+            rsrc4 = _app->_ResourceManager->LoadResource("spr2.png","spr3");
+            //Get surface data from resources
+            Log("rsrc1 = %i", rsrc1);
+            Log("Rsrc1.size() = %i", rsrc1->GetSize());
+            spr1 = rsrc1->GetData();
+            spr2 = rsrc2->GetData();
+            spr3 = rsrc3->GetData();
+            spr4 = rsrc4->GetData();
+            //Get Resources here
+            wrldTs = (*_app->_ResourceManager)["ts_01"];
+            SET_TLBR(gAnims[0],0.0f,0.0f,1.0f,1.0f);
+            SET_TLBR(gAnims[1],0.0f,0.0f,1.0f,1.0f);
+            gAnims[0].pSurf = spr1;
+            gAnims[1].pSurf = spr2;
+            gAnims[0].fAnimSpeed = 1.0f;
+            gAnims[1].fAnimSpeed = 1.0f;
+            gAnims[0].lpNext = &gAnims[1];
+            gAnims[1].lpNext = &gAnims[0];
+            sprAnim.setAnimation(&gAnims[0]);
+            sprAnim.setGraphics(_app->_Graphics);
+			entity.SetPos(32,32);
+            entity.SetSurface(spr4);
+            Log("Memory Usage: %f MBytes", ((float)_app->_ResourceManager->GetMemoryUsage())/(1024.0f*1024.0f));
+        };
+        void shutdown(){
+        };
+
+        bool update(time_type delta){
+        };
+        void render(){
+            app->_GameWorld->DrawWorld((GfxSurface)wrldTs->GetData());
+            sprAnim.update(app->_System->getFrameTime());
+            sprAnim.drawCurrentFrame(128,128);
+            entity.Draw(app->_Graphics);
+            app->_Graphics->DrawString(0,0,"FPS: %i",(int)app->_System->FPS());
+            app->_Graphics->DrawString(32,32,"Hello SGE World!\nTesting Multiline Strings");
+            app->_Graphics->DrawLine(0,0,64,32);
+        };
+};
 class IntroState : public GameState
 {
 	private:
-		float INTRO_TIME;
+		time_type INTRO_TIME;
+		Resource* Logo;
+		bool isFadingIn;
+		u8 fadeValue;
 
    public:
-      IntroState();
-      ~IntroState();
+        IntroState() : _elapsedTime(SECONDS(0))
+        {
+            INTRO_TIME = SECONDS(0.04);
+            isFadingIn = true;
+            fadeValue = 0;
+        }
+        virtual ~IntroState(){};
 
-      void initialize();
-      void shutdown();
+        void initialize(ApplicationBase* _app){
+            app = _app;
+            Logo = _app->_ResourceManager->LoadResource("logo.png","logo");
+           // load up whatever resources I need (background, sounds, etc)
+        }
+        void shutdown()
+        {
+           // release whatever resources I loaded in initialize
+        }
 
-      bool update(float delta);
-      void render();
+		bool update(time_type delta)
+		{
+			_elapsedTime += delta;
+			if(isFadingIn)
+			{
+				fadeValue++;
+				if(_elapsedTime >= INTRO_TIME/2)
+				{
+					isFadingIn = false;
+				}
+			} else fadeValue--;
+			if (_elapsedTime >= INTRO_TIME)
+			{
+				// if we've been here long enough, move on to the menu state
+				StateMan()->popState();
+				StateMan()->pushState(new InGameState());
+			}
 
-   private:
-      float _elapsedTime;
+			return true;
+		}
+        void render()
+        {
+            app->_Graphics->DrawSurfaceAlpha(0,0,Logo->GetData(), (fadeValue*_elapsedTime)/INTRO_TIME);
+            app->_Graphics->DrawString(0,0,"Time Left: %i MS",INTRO_TIME - _elapsedTime);
+            app->_Graphics->DrawLine(0,0,32,32);
+           // render our background, etc.
+        }
+
+    private:
+        time_type _elapsedTime;
 };
 
-IntroState::IntroState() : _elapsedTime(0.0f)
-{
-	INTRO_TIME = 5.0f;
-}
-
-void IntroState::initialize()
-{
-   // load up whatever resources I need (background, sounds, etc)
-}
-
-void IntroState::shutdown()
-{
-   // release whatever resources I loaded in initialize
-}
-
-bool IntroState::update(float delta)
-{
-   _elapsedTime += delta;
-
-   if (_elapsedTime >= INTRO_TIME)
-   {
-      // if we've been here long enough, move on to the menu state
-      //StateManager::getInstance()->popState();
-      //StateManager::getInstance()->pushState(new MenuState());
-   }
-
-   return true;
-}
-
-void IntroState::render()
-{
-   // render our background, etc.
-}
 
 class MainApplication : public ApplicationBase
 {
 	public:
-	bool bRunning;
-	ANIM gAnims[2];
-	GameAnimation sprAnim;
-	GameEntity entity;
-	Resource rsrc;
-	Resource wrldTs;
-	bool Init()
-	{
-		bRunning = true;
-		//Set up all System-related stuff. I need to clean this all up later.
-		//loadLua(&lua);
+		bool bRunning;
+		Resource* rsrc;
+		MainApplication(API_Base* api) : ApplicationBase(api) {}
+		bool Init()
+		{
+			StateMan()->RegisterApplicationBase(this);
+			bRunning = true;
+			//Set up all System-related stuff. I need to clean this all up later.
+			//loadLua(&lua);
+			// Starts running FrameFunc().
+			// Note that the execution "stops" here
+			// until "true" is returned from FrameFunc().
+			StateMan()->pushState(new IntroState());
+			return true;
+		}
+		bool RenderFunc()
+		{
+			StateMan()->render();
+			return true;
+		}
+		bool FrameFunc()
+		{
+			StateMan()->update(_System->getFrameTime());
 
-		spr1 = _ResourceManager->LoadTexture("spr1.png","spr1");
-		spr2 = _ResourceManager->LoadTexture("spr3.png","spr2");
-		spr3 = _ResourceManager->LoadTexture("ts_01.png","ts_01");
-		spr4 = _ResourceManager->LoadTexture("spr2.png","spr3");
-		rsrc = (*_ResourceManager)["spr1"];
-		wrldTs = (*_ResourceManager)["ts_01"];
-		// Starts running FrameFunc().
-		// Note that the execution "stops" here
-		// until "true" is returned from FrameFunc().
-		SET_TLBR(gAnims[0],0.0f,0.0f,1.0f,1.0f);
-		SET_TLBR(gAnims[1],0.0f,0.0f,1.0f,1.0f);
-		gAnims[0].pSurf = spr1;
-		gAnims[1].pSurf = spr2;
-		gAnims[0].fAnimSpeed = 1.0f;
-		gAnims[1].fAnimSpeed = 1.0f;
-		gAnims[0].lpNext = &gAnims[1];
-		gAnims[1].lpNext = &gAnims[0];
-		sprAnim.setAnimation(&gAnims[0]);
-		sprAnim.setGraphics(_Graphics);
-		entity.SetPos(32,32);
-		entity.SetSurface(spr4);
-		return true;
-	}
-	bool RenderFunc()
-	{
-		_GameWorld->DrawWorld(wrldTs.rsrc.surface);
-		sprAnim.update(_System->getFrameTime());
-		sprAnim.drawCurrentFrame(128,128);
-		entity.Draw(_Graphics);
-		_Graphics->DrawString(0,0,"FPS: %i",(int)_System->FPS());
-		_Graphics->DrawString(32,32,"Hello SGE World!\nTesting Multiline Strings");
-		return true;
-	}
-	bool FrameFunc()
-	{
-		_Input->Query();
-		_Graphics->Render();
+			/*lua.callFunction("draw");
+			lua.run();*/
 
-		/*lua.callFunction("draw");
-		lua.run();*/
-
-		return bRunning;
-	}
-	void onKeyPress(int keyboard_key, int keyboard_flag, int keyboard_char)
-	{
-		if(keyboard_key == SDLK_ESCAPE) bRunning = false;
-		//if(keyboard_key == SDLK_F5) loadLua(&lua);
-	};
-	void onKeyRelease(int keyboard_key, int keyboard_flag, int keyboard_char)
-	{
-	};
-	void onMouseMove(float mouse_x, float mouse_y)
-	{
-	};
-	void onMousePress(int mouse_button, float mouse_x, float mouse_y)
-	{
-	};
-	void onMouseRelease(int mouse_button, float mouse_x, float mouse_y)
-	{
-	};
-	void onMouseWheel(int degrees, float mouse_x, float mouse_y)
-	{
-	};
-	GfxSurface spr1, spr2, spr3, spr4;
-	//LuaVM lua;
+			return bRunning;
+		}
+		void onKeyPress(int keyboard_key, int keyboard_flag, int keyboard_char)
+		{
+			Log("Keypress: %c",keyboard_char);
+			if(keyboard_key == KEY_ESCAPE) bRunning = false;
+			//if(keyboard_key == SDLK_F5) loadLua(&lua);
+		};
+		void onKeyRelease(int keyboard_key, int keyboard_flag, int keyboard_char)
+		{
+			Log("Keyrelease: %c",keyboard_char);
+		};
+		void onMouseMove(int mouse_x, int mouse_y)
+		{
+			Log("Mousemove: %i, %i",mouse_x, mouse_y);
+		};
+		void onMousePress(int mouse_button, int mouse_x, int mouse_y)
+		{
+		};
+		void onMouseRelease(int mouse_button, int mouse_x, int mouse_y)
+		{
+		};
+		void onMouseWheel(int degrees, int mouse_x, int mouse_y)
+		{
+		};
+		//LuaVM lua;
 };
 
 
 int main(int argc, char** argv)
 {
-	putenv("SDL_VIDEODRIVER=directx");
-	MainApplication MainApp;
+	API_Base* api = new API_MODE;
+	MainApplication MainApp(api);
 	MainApp.Run();
-	//MainApp.~ApplicationBase();
 	return false;
 }
 

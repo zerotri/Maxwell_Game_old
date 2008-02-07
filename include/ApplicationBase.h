@@ -8,10 +8,10 @@
 #include "VariableMap.h"
 #include "API_Base.h"
 
-class ApplicationBase : public InputHandler, public SysCallBack, public RenderCallback
+class ApplicationBase : public InputHandler, public SysCallBack
 {
 	public:
-		ApplicationBase();
+		ApplicationBase(API_Base* api);
 		virtual ~ApplicationBase();
 		bool _FrameFunc();
 		bool _Render();

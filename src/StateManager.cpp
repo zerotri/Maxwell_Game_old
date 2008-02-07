@@ -34,7 +34,7 @@ StateManager::~StateManager()
 //----------------------------------------------------------------------------
 void StateManager::pushState(GameState* state)
 {
-   state->initialize();
+   state->initialize(app);
    _states.push_back(state);
 }
 
@@ -84,7 +84,7 @@ void StateManager::popAll()
 //       from the current state's update method. Otherwise, it returns
 //       false.
 //----------------------------------------------------------------------------
-bool StateManager::update(float delta)
+bool StateManager::update(time_type delta)
 {
    if (_states.size() > 0)
    {
@@ -121,4 +121,14 @@ StateManager* StateManager::getInstance()
    }
 
    return _instance;
+}
+
+//----------------------------------------------------------------------------
+// Method:   RegisterApplicationBase
+// Description:   Registers the ApplicationBase class
+// Returns:   nothing
+//----------------------------------------------------------------------------
+void StateManager::RegisterApplicationBase(ApplicationBase* _app)
+{
+    app = _app;
 }

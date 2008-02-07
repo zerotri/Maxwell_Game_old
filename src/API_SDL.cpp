@@ -6,23 +6,25 @@
 API_SDL::API_SDL()
 {
 	/* Initialize SDL */
+	putenv("SDL_VIDEODRIVER=directx");
 	Log("Initializing API: [SDL]");
 	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0) {
 			fprintf(stderr, "Unable to init SDL: %s\n",
 					SDL_GetError());
 			exit(1);
 	}
+	keys = SDL_GetKeyState(NULL);
 }
 
 API_SDL::~API_SDL()
 {
 	SDL_Quit();
 }
-void API_SDL::Sys_Sleep(int count)
+void API_SDL::Sys_Sleep(s32 count)
 {
 	SDL_Delay(count);
 }
-int API_SDL::Sys_GetTicks()
+s32 API_SDL::Sys_GetTicks()
 {
 	return SDL_GetTicks();
 };
@@ -77,7 +79,7 @@ void API_SDL::Gfx_Destroy()
 		return;
 	SDL_FreeSurface((SDL_Surface*)_gfxSurface);
 };
-void API_SDL::Gfx_DrawString(int x, int y, char* format, unsigned int bgcolor, unsigned int fgcolor)
+void API_SDL::Gfx_DrawString(s32 x, s32 y, c_string_p format, u32 bgcolor, u32 fgcolor)
 {
 	int strpos = 0;
 	int strpos_s = 0;
@@ -101,65 +103,154 @@ void API_SDL::Gfx_DrawString(int x, int y, char* format, unsigned int bgcolor, u
 		}else strpos++;
 	}
 };
-void API_SDL::Gfx_DrawPoint(int x, int y)
+void API_SDL::Gfx_DrawPoint(s32 x, s32 y, u32 color)
 {
 };
-void API_SDL::Gfx_DrawLine(int x1, int y1, int x2, int y2)
+void API_SDL::Gfx_DrawLine(s32 x1, s32 y1, s32 x2, s32 y2, u32 color)
 {
 };
-void API_SDL::Gfx_DrawSurface(int x1, int y1,GfxSurface surf)
+void API_SDL::Gfx_DrawSurface(s32 x1, s32 y1,GfxSurface surf)
 {
+	/*SDL_Surface* _tsurf = (SDL_Surface*) surf;
+	SDL_Surface* _Gsurf = (SDL_Surface*) _gfxSurface;
+	Rect clipRect = {
+		(x1>0) ? x1 : 0,
+		(y1>0) ? y1 : 0,
+		(_tsurf->w>_Gsurf->w) ? _tsurf->w : _Gsurf->w,
+		(_tsurf->h>_Gsurf->h) ? _tsurf->h : _Gsurf->h};
+	for()
+	for()
+	{
+		int ialpha = 256 - *alpha; //inverse alpha
+*dest = (RMask & (((*source & RMask) * *alpha +
+           (*dest & RMask) * ialpha) >>8)) |
+        (GMask & (((*source & GMask) * *alpha +
+           (*dest & GMask) * ialpha) >>8)) |
+        (BMask & (((*source & BMask) * *alpha +
+           (*dest & BMask) * ialpha) >>8));
+	}*/
 	sge_Blit(	(SDL_Surface*)surf,
 				(SDL_Surface*)_gfxSurface,
 				0,0,x1,y1,
 				Surface_GetWidth(surf),
 				Surface_GetHeight(surf));
 };
-void API_SDL::Gfx_DrawSurfaceRect(int x1, int y1,GfxSurface surf, Rect* rect)
+void API_SDL::Gfx_DrawSurfaceAlpha(s32 x1, s32 y1,GfxSurface surf, s32 alpha)
+{
+    sge_BlitTransparent(	(SDL_Surface*)surf,
+                            (SDL_Surface*)_gfxSurface,
+				            0,0,x1,y1,
+                            Surface_GetWidth(surf),
+                            Surface_GetHeight(surf),
+                            0xFF00FF00, alpha);
+};
+void API_SDL::Gfx_DrawSurfaceRect(s32 x1, s32 y1,GfxSurface surf, Rect* rect)
 {
 	//sge_Blit(surf,_gfxSurface,srcx,srcy,(int)x1,(int)y1,srcw,srch);
 	SDL_Rect srcRct = {rect->x,rect->y,((SDL_Surface*)surf)->w,((SDL_Surface*)surf)->h};
 	SDL_Rect dstRct = {x1,y1,rect->w,rect->h};
 	SDL_BlitSurface((SDL_Surface*)surf, &srcRct, (SDL_Surface*)_gfxSurface, &dstRct);
 };
-void API_SDL::Gfx_ClearScreen(unsigned int color)
+void API_SDL::Gfx_ClearScreen(u32 color)
 {
 	sge_ClearSurface((SDL_Surface*)_gfxSurface, color);
 };
-unsigned int API_SDL::Gfx_MakeColor(int r, int g, int b, int a)
+u32	API_SDL::Gfx_MakeColor(u8 r, u8 g, u8 b, u8 a)
 {
 	return SDL_MapRGBA(((SDL_Surface*)_gfxSurface)->format,r,g,b,a);
 };
-void API_SDL::Gfx_GetRGBA(unsigned int col, int* r, int* g, int* b, int* a)
+void API_SDL::Gfx_GetRGBA(u32 col, u8* r, u8* g, u8* b, u8* a)
 {
-	SDL_GetRGBA(col,((SDL_Surface*)_gfxSurface)->format,
-				(unsigned char*)r,
-				(unsigned char*)g,
-				(unsigned char*)b,
-				(unsigned char*)a);
+	SDL_GetRGBA(col,((SDL_Surface*)_gfxSurface)->format, r, g, b, a);
 };
-GfxSurface API_SDL::Surface_Create(int width, int height)
+GfxSurface API_SDL::Surface_Create(s32 width, s32 height)
 {
 	return NULL;
 };
-GfxSurface API_SDL::Surface_Load(char* fname)
+GfxSurface API_SDL::Surface_Load(c_string_p fname)
 {
 	return (GfxSurface)SDL_DisplayFormatAlpha(IMG_Load(fname));
 };
-int API_SDL::Surface_Free(GfxSurface surface)
+s32 API_SDL::Surface_Free(GfxSurface surface)
 {
 	SDL_FreeSurface((SDL_Surface*)surface);
 	return true;
 };
-int API_SDL::Surface_GetWidth(GfxSurface surface)
+s32 API_SDL::Surface_GetWidth(GfxSurface surface)
 {
 	return ((SDL_Surface*)surface)->w;
 };
-int API_SDL::Surface_GetHeight(GfxSurface surface)
+s32 API_SDL::Surface_GetHeight(GfxSurface surface)
 {
 	return ((SDL_Surface*)surface)->h;
 };
-int API_SDL::Surface_GetBitsPerPixel(GfxSurface surface)
+s32 API_SDL::Surface_GetBitsPerPixel(GfxSurface surface)
 {
 	return ((SDL_Surface*)surface)->pitch;
+};
+s32 API_SDL::Surface_GetMemoryUsage(GfxSurface surface)
+{
+	SDL_Surface* _tsurf = (SDL_Surface*)surface;
+	return (_tsurf->w*_tsurf->h*(_tsurf->pitch/8))+sizeof(SDL_Surface);
+};
+s32 API_SDL::Input_GetEvent(InputEvent* evt)
+{
+	SDL_Event event;
+	int event_number = SDL_PollEvent(&event);
+	if(event_number==0)
+		return false;
+	switch(event.type)
+	{
+		case SDL_KEYDOWN:
+			evt->type = InputEvent::Evt_KeyPress;
+			evt->key.keyboard_key = event.key.keysym.sym;
+			evt->key.keyboard_flag = event.key.keysym.mod;
+			evt->key.keyboard_char = event.key.keysym.scancode;
+		break;
+		case SDL_KEYUP:
+			evt->type = InputEvent::Evt_KeyRelease;
+			evt->key.keyboard_key = event.key.keysym.sym;
+			evt->key.keyboard_flag = event.key.keysym.mod;
+			evt->key.keyboard_char = event.key.keysym.scancode;
+		break;
+		case SDL_MOUSEBUTTONDOWN:
+			evt->type = InputEvent::Evt_MousePress;
+			evt->mouse.button = event.button.button;
+			evt->mouse.x = event.button.x;
+			evt->mouse.y = event.button.y;
+		break;
+		case SDL_MOUSEBUTTONUP:
+			if(event.button.button == SDL_BUTTON_WHEELUP)
+			{
+				evt->type = InputEvent::Evt_MouseWheel;
+				evt->mouse.degrees = 1;
+				evt->mouse.x = event.button.x;
+				evt->mouse.y = event.button.y;
+			}
+			else if(event.button.button == SDL_BUTTON_WHEELDOWN)
+			{
+				evt->type = InputEvent::Evt_MouseWheel;
+				evt->mouse.degrees = -1;
+				evt->mouse.x = event.button.x;
+				evt->mouse.y = event.button.y;
+			}
+			else
+			{
+				evt->type = InputEvent::Evt_MouseRelease;
+				evt->mouse.button = event.button.button;
+				evt->mouse.x = event.button.x;
+				evt->mouse.y = event.button.y;
+			}
+		break;
+		case SDL_MOUSEMOTION:
+				evt->type = InputEvent::Evt_MouseMove;
+				evt->mouse.x = event.motion.x;
+				evt->mouse.y = event.motion.y;
+		break;
+	}
+	return event_number;
+};
+bool API_SDL::Input_GetKeyState(u8 key)
+{
+	return (keys[key] == 1);
 };

@@ -1,6 +1,8 @@
 #include "System.h"
 #include <stdarg.h>
 #include <stdio.h>
+bool SysCallBack::_FrameFunc(){return false;};
+bool SysCallBack::_Render(){return false;};
 System* LogSys = 0;
 System::System()
 {
@@ -20,10 +22,17 @@ int System::Init()
 }
 void System::Run()
 {
+	bOverloadedFuncs = api->Sys_OverloadFuncs();
 	if(!_private_FrameFunc) {
 		Log("System::Run: No frame function defined");
 		return;
 	}
+	if(bOverloadedFuncs)
+	{
+		api->Sys_Run();
+		return;
+	}
+
 
 	bActive=true;
 	float fTime=0.0f;
@@ -116,9 +125,12 @@ int System::FPS()
 {
 	return nFPS;
 }
-float System::getFrameTime()
+time_type System::getFrameTime()
 {
-	return frameTime;
+	if(bOverloadedFuncs)
+	{
+		return api->Sys_GetDelta();
+	}else return (time_type)(frameTime*1000.0f);
 }
 void System::End()
 {

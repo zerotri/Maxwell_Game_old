@@ -1,14 +1,8 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 #include "API_Base.h"
+#include "utils.h"
 #include <stdio.h>
-
-class System;
-class SysCallBack
-{
-	public:
-		virtual bool _FrameFunc(){return false;};
-};
 
 class System
 {
@@ -23,11 +17,12 @@ class System
 		void SetFrameFunc(SysCallBack* frameFunc);
 		void SetAPI(API_Base* _api);
 		int FPS();
-		float getFrameTime();
-	protected:
-	private:
+		time_type getFrameTime();
 		int nFPS;
 		float frameTime;
+		bool bOverloadedFuncs;
+	protected:
+	private:
 		bool bActive;
 		SysCallBack* _private_FrameFunc;
 		API_Base* api;

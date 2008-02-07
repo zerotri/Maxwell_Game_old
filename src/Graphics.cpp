@@ -3,6 +3,8 @@
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdarg.h>
+
 Graphics::Graphics()
 {
 }
@@ -36,33 +38,25 @@ void Graphics::DrawPoint(int x, int y)
 }
 void Graphics::DrawLine(int x1, int y1, int x2, int y2)
 {
+	api->Gfx_DrawLine(x1, y1, x2, y2,fgColor);
 }
 void Graphics::DrawSurface(int x1, int y1,GfxSurface surf)
 {
 	api->Gfx_DrawSurface(x1,y1,surf);
 }
+void Graphics::DrawSurfaceAlpha(int x1, int y1,GfxSurface surf, s32 alpha)
+{
+	api->Gfx_DrawSurfaceAlpha(x1,y1,surf, alpha);
+}
 void Graphics::DrawSurfacePart(int x1, int y1,GfxSurface surf, int srcx, int srcy, int srcw, int srch)
 {
-	Rect dstRct = {x1,y1,srcw,srch};
+	Rect dstRct = {srcx,srcy,srcw,srch};
 	api->Gfx_DrawSurfaceRect(x1,y1,surf,&dstRct);
-	//sge_Blit(surf,_gfxSurface,srcx,srcy,(int)x1,(int)y1,srcw,srch);
 }
 void Graphics::DrawSurfaceRect(int x1, int y1,GfxSurface surf, Rect* rect)
 {
-	//sge_Blit(surf,_gfxSurface,srcx,srcy,(int)x1,(int)y1,srcw,srch);
-	Rect dstRct = {x1,y1,rect->w,rect->h};
-	//SDL_BlitSurface(surf, rect, _gfxSurface, &dstRct);
-	api->Gfx_DrawSurfaceRect(x1,y1,surf,&dstRct);
-	//DrawSprite_AdditiveBlend(surf, _gfxSurface);
+	api->Gfx_DrawSurfaceRect(x1,y1,surf,rect);
 }
-/*void Graphics::DrawAnimation(int x, int y, GameAnimation* anim)
-{
-	if(anim == NULL)
-		return;
-	if(anim->baseAnimation == NULL)
-		return;
-	DrawSurface(x,y,anim->baseAnimation->pSurf);
-}*/
 
 void Graphics::SetBGColor(int r, int g, int b, int a)
 {
@@ -79,7 +73,7 @@ void Graphics::SetAPI(API_Base* _api)
 	bgColor = api->Gfx_MakeColor(0,0,0,255);
 	fgColor = api->Gfx_MakeColor(255,255,255,255);
 }
-void Graphics::SetRenderFunc(RenderCallback* renderFunc)
+void Graphics::SetRenderFunc(SysCallBack* renderFunc)
 {
 	_renderFunc = renderFunc;
 }

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug - SDL/AGG2D" />
+	<File name="build\__game.lua" open="0" top="0" tabpos="0">
+		<Cursor position="299" topLine="0" />
+	</File>
+	<File name="build\mgame.log" open="0" top="0" tabpos="3">
+		<Cursor position="1016" topLine="21" />
+	</File>
+	<File name="include\API_Base.h" open="0" top="0" tabpos="2">
+		<Cursor position="2189" topLine="57" />
+	</File>
+	<File name="include\API_HGE.h" open="0" top="0" tabpos="5">
+		<Cursor position="358" topLine="12" />
+	</File>
+	<File name="include\API_SDL.h" open="0" top="0" tabpos="4">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="include\API_SDLAGG.h" open="0" top="0" tabpos="0">
+		<Cursor position="3433" topLine="77" />
+	</File>
+	<File name="include\ApplicationBase.h" open="0" top="0" tabpos="2">
+		<Cursor position="286" topLine="18" />
+	</File>
+	<File name="include\GameAnimation.h" open="0" top="0" tabpos="0">
+		<Cursor position="590" topLine="6" />
+	</File>
+	<File name="include\GameEntity.h" open="0" top="0" tabpos="2">
+		<Cursor position="65" topLine="3" />
+	</File>
+	<File name="include\GameState.h" open="0" top="0" tabpos="7">
+		<Cursor position="392" topLine="0" />
+	</File>
+	<File name="include\GameWorld.h" open="0" top="0" tabpos="0">
+		<Cursor position="200" topLine="0" />
+	</File>
+	<File name="include\Graphics.h" open="0" top="0" tabpos="2">
+		<Cursor position="900" topLine="22" />
+	</File>
+	<File name="include\Input.h" open="0" top="0" tabpos="3">
+		<Cursor position="405" topLine="0" />
+	</File>
+	<File name="include\ResourceManager.h" open="0" top="0" tabpos="5">
+		<Cursor position="1500" topLine="36" />
+	</File>
+	<File name="include\ScriptVM.h" open="0" top="0" tabpos="4">
+		<Cursor position="217" topLine="0" />
+	</File>
+	<File name="include\StateManager.h" open="0" top="0" tabpos="5">
+		<Cursor position="1351" topLine="1" />
+	</File>
+	<File name="include\System.h" open="0" top="0" tabpos="4">
+		<Cursor position="97" topLine="0" />
+	</File>
+	<File name="include\VariableMap.h" open="0" top="0" tabpos="7">
+		<Cursor position="62" topLine="0" />
+	</File>
+	<File name="include\main.h" open="0" top="0" tabpos="2">
+		<Cursor position="49" topLine="0" />
+	</File>
+	<File name="include\mapnodes.h" open="0" top="0" tabpos="0">
+		<Cursor position="126" topLine="0" />
+	</File>
+	<File name="include\utils.h" open="0" top="0" tabpos="5">
+		<Cursor position="488" topLine="10" />
+	</File>
+	<File name="include\vector.h" open="0" top="0" tabpos="3">
+		<Cursor position="2542" topLine="85" />
+	</File>
+	<File name="lib\agg2d\Agg2D.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="58613" topLine="1764" />
+	</File>
+	<File name="lib\agg2d\Agg2D.h" open="0" top="0" tabpos="0">
+		<Cursor position="7018" topLine="225" />
+	</File>
+	<File name="lib\agg2d\agg_bezier_arc.h" open="0" top="0" tabpos="0">
+		<Cursor position="2638" topLine="56" />
+	</File>
+	<File name="lib\agg2d\agg_color_rgba.h" open="0" top="0" tabpos="0">
+		<Cursor position="7118" topLine="269" />
+	</File>
+	<File name="lib\agg2d\agg_pixfmt_rgba.h" open="0" top="0" tabpos="3">
+		<Cursor position="114020" topLine="2759" />
+	</File>
+	<File name="lib\agg2d\agg_renderer_base.h" open="0" top="0" tabpos="0">
+		<Cursor position="19186" topLine="535" />
+	</File>
+	<File name="lib\agg2d\agg_rendering_buffer.h" open="0" top="0" tabpos="0">
+		<Cursor position="7944" topLine="117" />
+	</File>
+	<File name="lib\hge\hge.h" open="0" top="0" tabpos="0">
+		<Cursor position="4466" topLine="157" />
+	</File>
+	<File name="lib\hge\hge_impl.h" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="66" />
+	</File>
+	<File name="lib\sge\sge_surface.h" open="0" top="0" tabpos="0">
+		<Cursor position="4830" topLine="73" />
+	</File>
+	<File name="mgame_config.h" open="0" top="0" tabpos="0">
+		<Cursor position="183" topLine="0" />
+	</File>
+	<File name="src\API_Base.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="321" topLine="9" />
+	</File>
+	<File name="src\API_HGE.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="4668" topLine="149" />
+	</File>
+	<File name="src\API_SDL.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="13" topLine="0" />
+	</File>
+	<File name="src\API_SDLAGG.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="4672" topLine="137" />
+	</File>
+	<File name="src\ApplicationBase.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="243" topLine="18" />
+	</File>
+	<File name="src\GameAnimation.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="1288" topLine="0" />
+	</File>
+	<File name="src\GameEntity.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="824" topLine="22" />
+	</File>
+	<File name="src\GameWorld.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="200" topLine="0" />
+	</File>
+	<File name="src\Graphics.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="991" topLine="54" />
+	</File>
+	<File name="src\Input.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="1164" topLine="42" />
+	</File>
+	<File name="src\ResourceManager.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="1156" topLine="70" />
+	</File>
+	<File name="src\ScriptVM.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="2135" topLine="72" />
+	</File>
+	<File name="src\StateManager.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="1540" topLine="74" />
+	</File>
+	<File name="src\System.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="1974" topLine="72" />
+	</File>
+	<File name="src\VariableMap.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="163" topLine="0" />
+	</File>
+	<File name="src\gfx_utils.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="2" topLine="0" />
+	</File>
+	<File name="src\main.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="1715" topLine="30" />
+	</File>
+	<File name="src\utils.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="287" topLine="5" />
+	</File>
+	<File name="src\vector.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="54" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

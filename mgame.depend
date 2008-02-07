@@ -163,7 +163,7 @@
 
 1200632777 c:\dev\projects\4ev_entry\include\utils.h
 
-1201075268 source:c:\dev\projects\4ev_entry\src\gameentity.cpp
+1201140791 source:c:\dev\projects\4ev_entry\src\gameentity.cpp
 	"GameEntity.h"
 	"utils.h"
 	"mgame_config.h"
@@ -175,9 +175,10 @@
 	<string>
 	"Graphics.h"
 
-1201072903 source:c:\dev\projects\4ev_entry\src\gameworld.cpp
+1201140907 source:c:\dev\projects\4ev_entry\src\gameworld.cpp
 	"GameWorld.h"
 	<math.h>
+	"utils.h"
 
 1201064571 c:\dev\projects\4ev_entry\include\gameworld.h
 	"Graphics.h"
@@ -229,12 +230,12 @@
 	<tchar.h>
 	<wchar.h>
 
-1200632727 source:c:\dev\projects\4ev_entry\src\input.cpp
+1201141657 source:c:\dev\projects\4ev_entry\src\input.cpp
 	"Input.h"
 
-1200730471 c:\dev\projects\4ev_entry\include\input.h
+1201140979 c:\dev\projects\4ev_entry\include\input.h
 	<vector>
-	<sdl.h>
+	"API_Base.h"
 
 1198371689 source:c:\dev\projects\4ev_entry\src\luavm.cpp
 	"LuaVM.h"
@@ -248,7 +249,7 @@
 
 1198366888 source:c:\dev\projects\4ev_entry\src\lua_utils.cpp
 
-1201075225 source:c:\dev\projects\4ev_entry\src\utils.cpp
+1201140692 source:c:\dev\projects\4ev_entry\src\utils.cpp
 	"utils.h"
 	<math.h>
 	<stdarg.h>
@@ -301,7 +302,7 @@
 
 1197793414 c:\dev\projects\4ev_entry\include\lualink.h
 
-1201077016 source:c:\dev\projects\4ev_entry\src\main.cpp
+1201141403 source:c:\dev\projects\4ev_entry\src\main.cpp
 	"main.h"
 	"ApplicationBase.h"
 	"GameEntity.h"
@@ -347,13 +348,13 @@
 	"API_Base.h"
 	<stdio.h>
 
-1201074383 c:\dev\projects\4ev_entry\include\resourcemanager.h
+1201147829 c:\dev\projects\4ev_entry\include\resourcemanager.h
 	"main.h"
 	"API_Base.h"
 	<map>
 	<string>
 
-1201074628 source:c:\dev\projects\4ev_entry\src\resourcemanager.cpp
+1201157892 source:c:\dev\projects\4ev_entry\src\resourcemanager.cpp
 	"ResourceManager.h"
 	"utils.h"
 
@@ -371,7 +372,7 @@
 	"hge.h"
 	<math.h>
 
-1201077063 source:c:\dev\projects\4ev_entry\src\graphics.cpp
+1201103447 source:c:\dev\projects\4ev_entry\src\graphics.cpp
 	"Graphics.h"
 	<time.h>
 	<math.h>
@@ -1553,7 +1554,7 @@
 1200214820 source:c:\dev\projects\4ev_entry\src\gfx_utils.cpp
 	"SDL.h"
 
-1201077034 source:c:\dev\projects\4ev_entry\src\applicationbase.cpp
+1201139901 source:c:\dev\projects\4ev_entry\src\applicationbase.cpp
 	"ApplicationBase.h"
 	"API_SDL.h"
 
@@ -1682,19 +1683,971 @@
 
 1200986776 c:\dev\projects\4ev_entry\mgame_config.h
 
-1201076506 c:\dev\projects\4ev_entry\include\api_base.h
+1201147475 c:\dev\projects\4ev_entry\include\api_base.h
 	"main.h"
 
-1201076650 source:c:\dev\projects\4ev_entry\src\api_base.cpp
+1201147525 source:c:\dev\projects\4ev_entry\src\api_base.cpp
 	"API_Base.h"
 
-1201077283 source:c:\dev\projects\4ev_entry\src\api_sdl.cpp
+1201147604 source:c:\dev\projects\4ev_entry\src\api_sdl.cpp
 	"API_SDL.h"
 	<sdl.h>
 	<sdl_image.h>
 	"utils.h"
 
-1201076512 c:\dev\projects\4ev_entry\include\api_sdl.h
+1201147495 c:\dev\projects\4ev_entry\include\api_sdl.h
 	"API_Base.h"
 	<sge.h>
+
+1154164968 source:c:\dev\projects\mgame\lib\squirrel\sqstdaux.cpp
+	<squirrel.h>
+	<sqstdaux.h>
+	<assert.h>
+
+1173634210 c:\dev\projects\mgame\lib\squirrel\squirrel.h
+
+1101546680 c:\dev\projects\mgame\lib\squirrel\sqstdaux.h
+
+1173615308 source:c:\dev\projects\mgame\lib\squirrel\sqstdblob.cpp
+	<new>
+	<squirrel.h>
+	<sqstdio.h>
+	<string.h>
+	<sqstdblob.h>
+	"sqstdstream.h"
+	"sqstdblobimpl.h"
+
+1121272442 c:\dev\projects\mgame\lib\squirrel\sqstdio.h
+
+1121272292 c:\dev\projects\mgame\lib\squirrel\sqstdblob.h
+
+1137274166 c:\dev\projects\mgame\lib\squirrel\sqstdstream.h
+
+1141572658 c:\dev\projects\mgame\lib\squirrel\sqstdblobimpl.h
+
+1142674562 source:c:\dev\projects\mgame\lib\squirrel\sqstdio.cpp
+	<new>
+	<stdio.h>
+	<squirrel.h>
+	<sqstdio.h>
+	"sqstdstream.h"
+
+1134842442 source:c:\dev\projects\mgame\lib\squirrel\sqstdmath.cpp
+	<squirrel.h>
+	<math.h>
+	<stdlib.h>
+	<sqstdmath.h>
+
+1101546680 c:\dev\projects\mgame\lib\squirrel\sqstdmath.h
+
+1156081318 source:c:\dev\projects\mgame\lib\squirrel\sqstdrex.cpp
+	<squirrel.h>
+	<string.h>
+	<ctype.h>
+	<setjmp.h>
+	"sqstdstring.h"
+	<stdio.h>
+
+1155661728 c:\dev\projects\mgame\lib\squirrel\sqstdstring.h
+
+1147030278 source:c:\dev\projects\mgame\lib\squirrel\sqstdstream.cpp
+	<new>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<squirrel.h>
+	<sqstdio.h>
+	<sqstdblob.h>
+	"sqstdstream.h"
+	"sqstdblobimpl.h"
+
+1142689840 source:c:\dev\projects\mgame\lib\squirrel\sqstdstring.cpp
+	<squirrel.h>
+	<sqstdstring.h>
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<ctype.h>
+	<assert.h>
+
+1130943052 source:c:\dev\projects\mgame\lib\squirrel\sqstdsystem.cpp
+	<squirrel.h>
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	<sqstdsystem.h>
+	<wchar.h>
+
+1121272292 c:\dev\projects\mgame\lib\squirrel\sqstdsystem.h
+
+1201897265 source:c:\dev\projects\mgame\src\api_base.cpp
+	"API_Base.h"
+
+1201897418 c:\dev\projects\mgame\include\api_base.h
+	"main.h"
+
+1201897392 c:\dev\projects\mgame\include\main.h
+	"vector.h"
+	"ScriptVM.h"
+	"Input.h"
+	"System.h"
+	"Graphics.h"
+	"GameAnimation.h"
+	"GameWorld.h"
+	"ApplicationBase.h"
+	"GameEntity.h"
+	"StateManager.h"
+	"GameState.h"
+	"utils.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_platform.h
+
+1199052374 c:\dev\projects\mgame\lib\sdl\begin_code.h
+
+1199052374 c:\dev\projects\mgame\lib\sdl\close_code.h
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_keysym.h
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\dev\projects\mgame\lib\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1147856354 c:\dev\projects\mgame\lib\sdl\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1191080416 c:\dev\projects\mgame\lib\sge\sge.h
+	"sge_surface.h"
+	"sge_primitives.h"
+	"sge_misc.h"
+	"sge_tt_text.h"
+	"sge_bm_text.h"
+	"sge_textpp.h"
+	"sge_blib.h"
+	"sge_shape.h"
+	"sge_collision.h"
+	"sge_rotation.h"
+
+1191080416 c:\dev\projects\mgame\lib\sge\sge_surface.h
+	"SDL.h"
+	"sge_internal.h"
+
+1191080416 c:\dev\projects\mgame\lib\sge\sge_internal.h
+	"sge_config.h"
+
+1191080416 c:\dev\projects\mgame\lib\sge\sge_config.h
+
+1191080416 c:\dev\projects\mgame\lib\sge\sge_primitives.h
+	"SDL.h"
+	"sge_internal.h"
+
+1191080416 c:\dev\projects\mgame\lib\sge\sge_misc.h
+	"SDL.h"
+	"sge_internal.h"
+
+1191080416 c:\dev\projects\mgame\lib\sge\sge_tt_text.h
+	"SDL.h"
+	"sge_internal.h"
+
+1191080416 c:\dev\projects\mgame\lib\sge\sge_bm_text.h
+	"SDL.h"
+	"sge_internal.h"
+
+1191080416 c:\dev\projects\mgame\lib\sge\sge_textpp.h
+	"SDL.h"
+	"sge_internal.h"
+	<string>
+	<stdio.h>
+	"sge_tt_text.h"
+	"sge_bm_text.h"
+	"sge_shape.h"
+
+1191080416 c:\dev\projects\mgame\lib\sge\sge_shape.h
+	"SDL.h"
+	"sge_internal.h"
+	<list>
+	"sge_surface.h"
+	"sge_collision.h"
+
+1191080416 c:\dev\projects\mgame\lib\sge\sge_collision.h
+	"SDL.h"
+	"sge_internal.h"
+
+1191080416 c:\dev\projects\mgame\lib\sge\sge_blib.h
+	"SDL.h"
+	"sge_internal.h"
+
+1191080416 c:\dev\projects\mgame\lib\sge\sge_rotation.h
+	"SDL.h"
+	"sge_internal.h"
+
+1200686901 c:\dev\projects\mgame\include\vector.h
+	<math.h>
+
+1200767291 c:\dev\projects\mgame\include\scriptvm.h
+	<vector>
+	<string>
+	<squirrel.h>
+
+1201140979 c:\dev\projects\mgame\include\input.h
+	<vector>
+	"API_Base.h"
+
+1201896164 c:\dev\projects\mgame\include\system.h
+	"API_Base.h"
+	"utils.h"
+	<stdio.h>
+
+1201897427 c:\dev\projects\mgame\include\graphics.h
+	"main.h"
+	"API_Base.h"
+
+1201598918 c:\dev\projects\mgame\include\gameanimation.h
+	"main.h"
+
+1201064571 c:\dev\projects\mgame\include\gameworld.h
+	"Graphics.h"
+
+1201596921 c:\dev\projects\mgame\include\utils.h
+
+1201718324 source:c:\dev\projects\mgame\src\api_sdl.cpp
+	"API_SDL.h"
+	<sdl.h>
+	<sdl_image.h>
+	"utils.h"
+
+1201896360 c:\dev\projects\mgame\include\api_sdl.h
+	"API_Base.h"
+	<sdl.h>
+	<sdl_image.h>
+	<sge.h>
+
+1201897584 source:c:\dev\projects\mgame\src\applicationbase.cpp
+	"ApplicationBase.h"
+	"API_Base.h"
+
+1201897439 c:\dev\projects\mgame\include\applicationbase.h
+	"System.h"
+	"Input.h"
+	"Graphics.h"
+	"ResourceManager.h"
+	"GameWorld.h"
+	"VariableMap.h"
+	"API_Base.h"
+
+1201595325 c:\dev\projects\mgame\include\resourcemanager.h
+	"main.h"
+	"API_Base.h"
+	<map>
+	<string>
+
+1199866281 c:\dev\projects\mgame\include\variablemap.h
+	<map>
+	<string>
+
+1201599066 source:c:\dev\projects\mgame\src\gameanimation.cpp
+	"GameAnimation.h"
+	"utils.h"
+
+1201140791 source:c:\dev\projects\mgame\src\gameentity.cpp
+	"GameEntity.h"
+	"utils.h"
+	"mgame_config.h"
+
+1201718254 c:\dev\projects\mgame\include\gameentity.h
+	<vector.h>
+	<map>
+	<string>
+	"Graphics.h"
+
+1200986776 c:\dev\projects\mgame\mgame_config.h
+
+1201140907 source:c:\dev\projects\mgame\src\gameworld.cpp
+	"GameWorld.h"
+	<math.h>
+	"utils.h"
+
+1202106171 source:c:\dev\projects\mgame\src\graphics.cpp
+	"Graphics.h"
+	<time.h>
+	<math.h>
+	<stdio.h>
+	<string.h>
+	<stdarg.h>
+
+1201710809 source:c:\dev\projects\mgame\src\input.cpp
+	"Input.h"
+
+1201595618 source:c:\dev\projects\mgame\src\resourcemanager.cpp
+	"ResourceManager.h"
+	"utils.h"
+	<algorithm>
+	"other_mem_fun.h"
+
+1200767304 source:c:\dev\projects\mgame\src\scriptvm.cpp
+	"ScriptVM.h"
+	"sqstdmath.h"
+	"sqstdaux.h"
+	"sqstdstring.h"
+	"sqstdio.h"
+	<stdarg.h>
+	<stdio.h>
+
+1201597903 source:c:\dev\projects\mgame\src\statemanager.cpp
+	"StateManager.h"
+	"GameState.h"
+
+1201598332 c:\dev\projects\mgame\include\statemanager.h
+	<vector>
+	"utils.h"
+	"ApplicationBase.h"
+
+1201598233 c:\dev\projects\mgame\include\gamestate.h
+	"utils.h"
+	"ApplicationBase.h"
+
+1201897381 source:c:\dev\projects\mgame\src\system.cpp
+	"System.h"
+	<stdarg.h>
+	<stdio.h>
+
+1199866290 source:c:\dev\projects\mgame\src\variablemap.cpp
+	"VariableMap.h"
+
+1201718296 source:c:\dev\projects\mgame\src\gfx_utils.cpp
+
+1202196289 source:c:\dev\projects\mgame\src\main.cpp
+	"main.h"
+	"API_SDL.h"
+	"API_HGE.h"
+	"API_SDLAGG.h"
+
+1201897617 source:c:\dev\projects\mgame\src\utils.cpp
+	"utils.h"
+	<math.h>
+	<stdarg.h>
+	<stdio.h>
+	<System.h>
+
+1201595220 c:\dev\projects\mgame\include\other_mem_fun.h
+	<algorithm>
+	<functional>
+
+1201899267 source:c:\dev\projects\mgame\src\api_hge.cpp
+	"API_HGE.h"
+	"utils.h"
+
+1201897260 c:\dev\projects\mgame\include\api_hge.h
+	"API_Base.h"
+	<hge.h>
+	<hgefont.h>
+
+1192245142 c:\dev\projects\mgame\lib\hge\hge.h
+	<windows.h>
+
+1184975834 c:\dev\projects\mgame\lib\hge\hgefont.h
+	"hge.h"
+	"hgesprite.h"
+
+1177635346 c:\dev\projects\mgame\lib\hge\hgesprite.h
+	"hge.h"
+	"hgerect.h"
+
+1176936486 c:\dev\projects\mgame\lib\hge\hgerect.h
+
+1202171612 c:\dev\projects\mgame\include\api_sdlagg.h
+	"API_Base.h"
+	<sdl.h>
+	<sdl_image.h>
+	<sge.h>
+	"Agg2D.h"
+
+1202099792 source:c:\dev\projects\mgame\lib\agg2d\agg2d.cpp
+	"Agg2D.h"
+
+1202176917 c:\dev\projects\mgame\lib\agg2d\agg2d.h
+	"agg_basics.h"
+	"agg_trans_affine.h"
+	"agg_trans_viewport.h"
+	"agg_path_storage.h"
+	"agg_conv_stroke.h"
+	"agg_conv_transform.h"
+	"agg_conv_curve.h"
+	"agg_rendering_buffer.h"
+	"agg_renderer_base.h"
+	"agg_renderer_scanline.h"
+	"agg_span_gradient.h"
+	"agg_span_image_filter_rgba.h"
+	"agg_span_allocator.h"
+	"agg_span_converter.h"
+	"agg_span_interpolator_linear.h"
+	"agg_rasterizer_scanline_aa.h"
+	"agg_gamma_functions.h"
+	"agg_scanline_u.h"
+	"agg_bezier_arc.h"
+	"agg_rounded_rect.h"
+	"agg_font_cache_manager.h"
+	"agg_font_freetype.h"
+	"agg_font_win32_tt.h"
+	"agg_pixfmt_rgba.h"
+	"agg_image_accessors.h"
+
+1151105722 c:\dev\projects\mgame\lib\agg2d\agg_basics.h
+	<math.h>
+	"agg_config.h"
+	"agg_allocator.h"
+
+1150576538 c:\dev\projects\mgame\lib\agg2d\agg_config.h
+
+1151105722 c:\dev\projects\mgame\lib\agg2d\agg_trans_affine.h
+	<math.h>
+	"agg_basics.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_trans_viewport.h
+	<string.h>
+	"agg_trans_affine.h"
+
+1151122850 c:\dev\projects\mgame\lib\agg2d\agg_path_storage.h
+	<string.h>
+	<math.h>
+	"agg_math.h"
+	"agg_array.h"
+	"agg_bezier_arc.h"
+
+1150683236 c:\dev\projects\mgame\lib\agg2d\agg_math.h
+	<math.h>
+	"agg_basics.h"
+
+1149218424 c:\dev\projects\mgame\lib\agg2d\agg_array.h
+	<stddef.h>
+	<string.h>
+	"agg_basics.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_bezier_arc.h
+	"agg_conv_transform.h"
+
+1140064834 c:\dev\projects\mgame\lib\agg2d\agg_conv_transform.h
+	"agg_basics.h"
+	"agg_trans_affine.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_conv_stroke.h
+	"agg_basics.h"
+	"agg_vcgen_stroke.h"
+	"agg_conv_adaptor_vcgen.h"
+
+1141971974 c:\dev\projects\mgame\lib\agg2d\agg_vcgen_stroke.h
+	"agg_math_stroke.h"
+
+1152588866 c:\dev\projects\mgame\lib\agg2d\agg_math_stroke.h
+	"agg_math.h"
+	"agg_vertex_sequence.h"
+
+1139819190 c:\dev\projects\mgame\lib\agg2d\agg_vertex_sequence.h
+	"agg_basics.h"
+	"agg_array.h"
+	"agg_math.h"
+
+1150523032 c:\dev\projects\mgame\lib\agg2d\agg_conv_adaptor_vcgen.h
+	"agg_basics.h"
+
+1150523032 c:\dev\projects\mgame\lib\agg2d\agg_conv_curve.h
+	"agg_basics.h"
+	"agg_curves.h"
+
+1144743242 c:\dev\projects\mgame\lib\agg2d\agg_curves.h
+	"agg_array.h"
+
+1150582038 c:\dev\projects\mgame\lib\agg2d\agg_rendering_buffer.h
+	"agg_array.h"
+
+1152761854 c:\dev\projects\mgame\lib\agg2d\agg_renderer_base.h
+	"agg_basics.h"
+	"agg_rendering_buffer.h"
+
+1150667400 c:\dev\projects\mgame\lib\agg2d\agg_renderer_scanline.h
+	"agg_basics.h"
+	"agg_renderer_base.h"
+
+1150702564 c:\dev\projects\mgame\lib\agg2d\agg_span_gradient.h
+	<math.h>
+	<stdlib.h>
+	<string.h>
+	"agg_basics.h"
+	"agg_math.h"
+	"agg_array.h"
+
+1149746798 c:\dev\projects\mgame\lib\agg2d\agg_span_image_filter_rgba.h
+	"agg_basics.h"
+	"agg_color_rgba.h"
+	"agg_span_image_filter.h"
+
+1150702564 c:\dev\projects\mgame\lib\agg2d\agg_color_rgba.h
+	<math.h>
+	"agg_basics.h"
+
+1149746798 c:\dev\projects\mgame\lib\agg2d\agg_span_image_filter.h
+	"agg_basics.h"
+	"agg_image_filters.h"
+	"agg_span_interpolator_linear.h"
+
+1142831016 c:\dev\projects\mgame\lib\agg2d\agg_image_filters.h
+	"agg_array.h"
+	"agg_math.h"
+
+1133845844 c:\dev\projects\mgame\lib\agg2d\agg_span_interpolator_linear.h
+	"agg_basics.h"
+	"agg_dda_line.h"
+	"agg_trans_affine.h"
+
+1133845844 c:\dev\projects\mgame\lib\agg2d\agg_dda_line.h
+	<stdlib.h>
+	"agg_basics.h"
+
+1142831016 c:\dev\projects\mgame\lib\agg2d\agg_span_allocator.h
+	"agg_array.h"
+
+1140064834 c:\dev\projects\mgame\lib\agg2d\agg_span_converter.h
+	"agg_basics.h"
+
+1151105722 c:\dev\projects\mgame\lib\agg2d\agg_rasterizer_scanline_aa.h
+	"agg_rasterizer_cells_aa.h"
+	"agg_rasterizer_sl_clip.h"
+	"agg_gamma_functions.h"
+
+1151105722 c:\dev\projects\mgame\lib\agg2d\agg_rasterizer_cells_aa.h
+	<string.h>
+	<math.h>
+	"agg_math.h"
+	"agg_array.h"
+
+1133845844 c:\dev\projects\mgame\lib\agg2d\agg_rasterizer_sl_clip.h
+	"agg_clip_liang_barsky.h"
+
+1133687030 c:\dev\projects\mgame\lib\agg2d\agg_clip_liang_barsky.h
+	"agg_basics.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_gamma_functions.h
+	<math.h>
+	"agg_basics.h"
+
+1142831016 c:\dev\projects\mgame\lib\agg2d\agg_scanline_u.h
+	"agg_array.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_rounded_rect.h
+	"agg_basics.h"
+	"agg_arc.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_arc.h
+	<math.h>
+	"agg_basics.h"
+
+1150747576 c:\dev\projects\mgame\lib\agg2d\agg_font_cache_manager.h
+	<string.h>
+	"agg_array.h"
+
+1127178596 c:\dev\projects\mgame\lib\agg2d\agg_font_freetype.h
+	<ft2build.h>
+	"agg_scanline_storage_aa.h"
+	"agg_scanline_storage_bin.h"
+	"agg_scanline_u.h"
+	"agg_scanline_bin.h"
+	"agg_path_storage_integer.h"
+	"agg_rasterizer_scanline_aa.h"
+	"agg_conv_curve.h"
+	"agg_font_cache_manager.h"
+	"agg_trans_affine.h"
+
+1143195906 c:\dev\projects\mgame\lib\freetype\ft2build.h
+	<freetype/config/ftheader.h>
+
+1168334456 c:\dev\projects\mgame\lib\freetype\freetype2\freetype\config\ftheader.h
+
+1142831016 c:\dev\projects\mgame\lib\agg2d\agg_scanline_storage_aa.h
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	"agg_array.h"
+
+1139537630 c:\dev\projects\mgame\lib\agg2d\agg_scanline_storage_bin.h
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	"agg_array.h"
+
+1142831016 c:\dev\projects\mgame\lib\agg2d\agg_scanline_bin.h
+	"agg_array.h"
+
+1134548100 c:\dev\projects\mgame\lib\agg2d\agg_path_storage_integer.h
+	<string.h>
+	"agg_array.h"
+
+1152851612 c:\dev\projects\mgame\lib\agg2d\agg_pixfmt_rgba.h
+	<string.h>
+	<math.h>
+	"agg_basics.h"
+	"agg_color_rgba.h"
+	"agg_rendering_buffer.h"
+
+1150716346 c:\dev\projects\mgame\lib\agg2d\agg_image_accessors.h
+	"agg_basics.h"
+
+1126467390 source:c:\dev\projects\mgame\lib\agg2d\agg_arc.cpp
+	<math.h>
+	"agg_arc.h"
+
+1126467390 source:c:\dev\projects\mgame\lib\agg2d\agg_arrowhead.cpp
+	"agg_arrowhead.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_arrowhead.h
+	"agg_basics.h"
+
+1126899130 source:c:\dev\projects\mgame\lib\agg2d\agg_bezier_arc.cpp
+	<math.h>
+	"agg_bezier_arc.h"
+
+1142831016 source:c:\dev\projects\mgame\lib\agg2d\agg_bspline.cpp
+	"agg_bspline.h"
+
+1142831016 c:\dev\projects\mgame\lib\agg2d\agg_bspline.h
+	"agg_array.h"
+
+1144743242 source:c:\dev\projects\mgame\lib\agg2d\agg_curves.cpp
+	<math.h>
+	"agg_curves.h"
+	"agg_math.h"
+
+1126467390 source:c:\dev\projects\mgame\lib\agg2d\agg_embedded_raster_fonts.cpp
+	"agg_embedded_raster_fonts.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_embedded_raster_fonts.h
+	"agg_basics.h"
+
+1150702564 source:c:\dev\projects\mgame\lib\agg2d\agg_gsv_text.cpp
+	<string.h>
+	<stdio.h>
+	"agg_gsv_text.h"
+	"agg_bounding_rect.h"
+
+1150702564 c:\dev\projects\mgame\lib\agg2d\agg_gsv_text.h
+	"agg_array.h"
+	"agg_conv_stroke.h"
+	"agg_conv_transform.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_bounding_rect.h
+	"agg_basics.h"
+
+1142831016 source:c:\dev\projects\mgame\lib\agg2d\agg_image_filters.cpp
+	"agg_image_filters.h"
+
+1139819190 source:c:\dev\projects\mgame\lib\agg2d\agg_line_aa_basics.cpp
+	<math.h>
+	"agg_line_aa_basics.h"
+
+1139819190 c:\dev\projects\mgame\lib\agg2d\agg_line_aa_basics.h
+	<stdlib.h>
+	"agg_basics.h"
+
+1142831016 source:c:\dev\projects\mgame\lib\agg2d\agg_line_profile_aa.cpp
+	"agg_renderer_outline_aa.h"
+
+1142831016 c:\dev\projects\mgame\lib\agg2d\agg_renderer_outline_aa.h
+	"agg_array.h"
+	"agg_math.h"
+	"agg_line_aa_basics.h"
+	"agg_dda_line.h"
+	"agg_ellipse_bresenham.h"
+	"agg_renderer_base.h"
+	"agg_gamma_functions.h"
+	"agg_clip_liang_barsky.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_ellipse_bresenham.h
+	"agg_basics.h"
+
+1126467390 source:c:\dev\projects\mgame\lib\agg2d\agg_rounded_rect.cpp
+	<math.h>
+	"agg_rounded_rect.h"
+
+1150683236 source:c:\dev\projects\mgame\lib\agg2d\agg_sqrt_tables.cpp
+	"agg_basics.h"
+
+1151105722 source:c:\dev\projects\mgame\lib\agg2d\agg_trans_affine.cpp
+	"agg_trans_affine.h"
+
+1126467390 source:c:\dev\projects\mgame\lib\agg2d\agg_trans_double_path.cpp
+	"agg_math.h"
+	"agg_trans_double_path.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_trans_double_path.h
+	"agg_basics.h"
+	"agg_vertex_sequence.h"
+
+1126467390 source:c:\dev\projects\mgame\lib\agg2d\agg_trans_single_path.cpp
+	"agg_math.h"
+	"agg_vertex_sequence.h"
+	"agg_trans_single_path.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_trans_single_path.h
+	"agg_basics.h"
+	"agg_vertex_sequence.h"
+
+1150532984 source:c:\dev\projects\mgame\lib\agg2d\agg_trans_warp_magnifier.cpp
+	<math.h>
+	"agg_trans_warp_magnifier.h"
+
+1150747576 c:\dev\projects\mgame\lib\agg2d\agg_trans_warp_magnifier.h
+
+1127178596 source:c:\dev\projects\mgame\lib\agg2d\agg_vcgen_bspline.cpp
+	"agg_vcgen_bspline.h"
+
+1127178596 c:\dev\projects\mgame\lib\agg2d\agg_vcgen_bspline.h
+	"agg_basics.h"
+	"agg_array.h"
+	"agg_bspline.h"
+
+1141971974 source:c:\dev\projects\mgame\lib\agg2d\agg_vcgen_contour.cpp
+	<math.h>
+	"agg_vcgen_contour.h"
+
+1141971974 c:\dev\projects\mgame\lib\agg2d\agg_vcgen_contour.h
+	"agg_math_stroke.h"
+
+1126467390 source:c:\dev\projects\mgame\lib\agg2d\agg_vcgen_dash.cpp
+	<math.h>
+	"agg_vcgen_dash.h"
+	"agg_shorten_path.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_vcgen_dash.h
+	"agg_basics.h"
+	"agg_vertex_sequence.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_shorten_path.h
+	"agg_basics.h"
+	"agg_vertex_sequence.h"
+
+1126467390 source:c:\dev\projects\mgame\lib\agg2d\agg_vcgen_markers_term.cpp
+	"agg_vcgen_markers_term.h"
+
+1127178596 c:\dev\projects\mgame\lib\agg2d\agg_vcgen_markers_term.h
+	"agg_basics.h"
+	"agg_vertex_sequence.h"
+
+1126467390 source:c:\dev\projects\mgame\lib\agg2d\agg_vcgen_smooth_poly1.cpp
+	"agg_vcgen_smooth_poly1.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_vcgen_smooth_poly1.h
+	"agg_basics.h"
+	"agg_vertex_sequence.h"
+
+1141971974 source:c:\dev\projects\mgame\lib\agg2d\agg_vcgen_stroke.cpp
+	<math.h>
+	"agg_vcgen_stroke.h"
+	"agg_shorten_path.h"
+
+1126467390 source:c:\dev\projects\mgame\lib\agg2d\agg_vpgen_clip_polygon.cpp
+	"agg_vpgen_clip_polygon.h"
+	"agg_clip_liang_barsky.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_vpgen_clip_polygon.h
+	"agg_basics.h"
+
+1138908596 source:c:\dev\projects\mgame\lib\agg2d\agg_vpgen_clip_polyline.cpp
+	"agg_vpgen_clip_polyline.h"
+	"agg_clip_liang_barsky.h"
+
+1138908596 c:\dev\projects\mgame\lib\agg2d\agg_vpgen_clip_polyline.h
+	"agg_basics.h"
+
+1126467390 source:c:\dev\projects\mgame\lib\agg2d\agg_vpgen_segmentator.cpp
+	<math.h>
+	"agg_vpgen_segmentator.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_vpgen_segmentator.h
+	<math.h>
+	"agg_basics.h"
+
+1202196550 source:c:\dev\projects\mgame\src\api_sdlagg.cpp
+	"API_SDLAGG.h"
+	<sdl.h>
+	<sdl_image.h>
+	"Agg2d.h"
+	"utils.h"
+
+1141971974 source:c:\dev\projects\mgame\lib\agg2d\agg_font_freetype.cpp
+	<stdio.h>
+	"agg_font_freetype.h"
+	"agg_bitset_iterator.h"
+	"agg_renderer_scanline.h"
+
+1126467390 c:\dev\projects\mgame\lib\agg2d\agg_bitset_iterator.h
+	"agg_basics.h"
 

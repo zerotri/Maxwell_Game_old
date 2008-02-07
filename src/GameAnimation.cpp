@@ -9,14 +9,14 @@ GameAnimation::GameAnimation()
 GameAnimation::~GameAnimation()
 {
 }
-void GameAnimation::update(float updateTime)
+void GameAnimation::update(time_type updateTime)
 {
 	if(baseAnimation == NULL)
 		return;
 	if(baseAnimation->lpNext != NULL)
 	{
 		ANIM *tAnimation = NULL;
-		float tDeltaTime = updateTime;
+		time_type tDeltaTime = updateTime;
 		tDeltaTime -= fTimeLeft;
 		fTimeLeft -= updateTime;
 		//bool animUpd = false;
@@ -24,7 +24,7 @@ void GameAnimation::update(float updateTime)
 		{
 			tAnimation = baseAnimation->lpNext;
 			baseAnimation = tAnimation;
-			fTimeLeft += baseAnimation->fAnimSpeed;
+			fTimeLeft += (time_type)(baseAnimation->fAnimSpeed*1000.0f);
 		}
 		/*if(fTimeLeft<0)
 			animUpd = true;
@@ -59,7 +59,7 @@ void GameAnimation::drawCurrentFrame(int x, int y, GfxSurface drawTexture)
 void GameAnimation::setAnimation(ANIM* baseAnim)
 {
 	baseAnimation = baseAnim;
-	fTimeLeft = baseAnimation->fAnimSpeed;
+	fTimeLeft = (time_type)(baseAnimation->fAnimSpeed*1000.0f);
 }
 void GameAnimation::setGraphics(Graphics* _gfx)
 {

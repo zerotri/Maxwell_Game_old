@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<MMAP version="0.1" >
+  <Header copyright="Wynter Woods">
+     Hello World!
+     <!-- some comments -->
+     <Application name="MGame" version="0.1" />
+  </Header>
+<Resources>
+  <Resource name="ts_001" filename="ts_001.png" dataType="Surface"/>
+</Resources>
+<Description><![CDATA[
+    <html><body>
+    This normally generates an unmatched tag error: <br> 
+    This normally generates an unknown escape sequence error: '&nbsp;'
+    </body></html>
+]]></Description>
+</MMAP>

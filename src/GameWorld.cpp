@@ -1,5 +1,6 @@
 #include "GameWorld.h"
 #include <math.h>
+#include "utils.h"
 #define MAP_W 8
 #define MAP_H 8
 typedef struct TileStruct_Type{
@@ -49,6 +50,7 @@ void GameWorld::DrawWorld(GfxSurface surface)
 	unsigned int surface_w = _gfx->Surface_GetWidth(surface);
 	unsigned int tile_x, tile_y, tile;
 	Rect tileRect = {0,0,32,32};
+	//Log("Drawing Tileset");
 	for(_x=0;_x<MAP_W;_x++)
 	{
 		for(_y=0;_y<MAP_H;_y++)
@@ -65,6 +67,7 @@ void GameWorld::DrawWorld(GfxSurface surface)
 			_gfx->DrawSurfaceRect(_x<<5, _y<<5,surface, &tileRect);
 		}
 	}
+	//Log("Tiles Drawn [%i,%i]",_x, _y);
 }
 void GameWorld::DrawTile(int dx, int dy, unsigned char tile, GfxSurface surface)
 {

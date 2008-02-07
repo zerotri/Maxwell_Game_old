@@ -1,0 +1,1574 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="MGame" />
+		<Option pch_mode="2" />
+		<Option default_target="Release" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="----SDL----">
+				<Option platforms="" />
+				<Option output="mgame" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+			</Target>
+			<Target title="Debug - SDL">
+				<Option output="build\mgame_d" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="build\" />
+				<Option object_output="build\debug\obj\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-pg" />
+					<Add option="-g" />
+					<Add option="-DMGAME_DEBUG" />
+					<Add option="-DAPIMODE_SDL" />
+					<Add directory="lib\sdl" />
+					<Add directory="lib\sge" />
+					<Add directory="lib\guichan\sdl" />
+				</Compiler>
+				<Linker>
+					<Add option="-pg -lgmon" />
+					<Add library="lib\libSDLmain.a" />
+					<Add library="lib\libSDL.a" />
+					<Add library="lib\zdll.lib" />
+					<Add library="lib\libSGE.a" />
+					<Add library="lib\SDL_image.lib" />
+				</Linker>
+			</Target>
+			<Target title="Release - SDL">
+				<Option output="build\mgame" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="build\" />
+				<Option object_output="build\obj\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=pentium-m" />
+					<Add option="-O2" />
+					<Add option="-DAPIMODE_SDL" />
+					<Add directory="lib\sdl" />
+					<Add directory="lib\sge" />
+					<Add directory="lib\guichan\sdl" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="lib\libSDLmain.a" />
+					<Add library="lib\libSDL.a" />
+					<Add library="lib\zdll.lib" />
+					<Add library="lib\libSGE.a" />
+					<Add library="lib\SDL_image.lib" />
+				</Linker>
+			</Target>
+			<Target title="----HGE----">
+				<Option platforms="" />
+				<Option output="mgame" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+			</Target>
+			<Target title="Debug - HGE">
+				<Option output="build\mgame_d" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="build\" />
+				<Option object_output="build\debug\obj\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-pg" />
+					<Add option="-g" />
+					<Add option="-DMGAME_DEBUG" />
+					<Add option="-DAPIMODE_HGE" />
+					<Add directory="lib\hge" />
+				</Compiler>
+				<Linker>
+					<Add option="-pg -lgmon" />
+					<Add library="lib\libhge.a" />
+					<Add library="lib\libhgehelp.a" />
+				</Linker>
+			</Target>
+			<Target title="Release - HGE">
+				<Option output="build\mgame" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="build\" />
+				<Option object_output="build\obj\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=pentium-m" />
+					<Add option="-O2" />
+					<Add option="-DAPIMODE_HGE" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="lib\libhge.a" />
+					<Add library="lib\libhgehelp.a" />
+				</Linker>
+			</Target>
+			<Target title="----SDL/AGG2D----">
+				<Option platforms="" />
+				<Option output="mgame" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+			</Target>
+			<Target title="Debug - SDL/AGG2D">
+				<Option output="build\mgame_d" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="build\" />
+				<Option object_output="build\debug\obj\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-pg" />
+					<Add option="-g" />
+					<Add option="-DMGAME_DEBUG" />
+					<Add option="-DAPIMODE_SDLAGG" />
+					<Add option="-DAGG2D_USE_FREETYPE" />
+					<Add directory="lib\sdl" />
+					<Add directory="lib\sge" />
+					<Add directory="lib\guichan\sdl" />
+					<Add directory="lib\freetype" />
+					<Add directory="lib\freetype\freetype2" />
+					<Add directory="lib\agg2d" />
+				</Compiler>
+				<Linker>
+					<Add option="-pg -lgmon" />
+					<Add library="lib\libSDLmain.a" />
+					<Add library="lib\libSDL.a" />
+					<Add library="lib\zdll.lib" />
+					<Add library="lib\libSGE.a" />
+					<Add library="lib\SDL_image.lib" />
+					<Add library="lib\libfreetype.dll.a" />
+				</Linker>
+			</Target>
+			<Target title="Release - SDL/AGG2D">
+				<Option output="build\mgame" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="build\" />
+				<Option object_output="build\obj\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=pentium-m" />
+					<Add option="-O2" />
+					<Add option="-DAPIMODE_SDLAGG" />
+					<Add option="-DAGG2D_USE_FREETYPE" />
+					<Add directory="lib\sdl" />
+					<Add directory="lib\sge" />
+					<Add directory="lib\guichan\sdl" />
+					<Add directory="lib\freetype" />
+					<Add directory="lib\freetype\freetype2" />
+					<Add directory="lib\agg2d" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="lib\libSDLmain.a" />
+					<Add library="lib\libSDL.a" />
+					<Add library="lib\zdll.lib" />
+					<Add library="lib\libSGE.a" />
+					<Add library="lib\SDL_image.lib" />
+					<Add library="lib\libfreetype.dll.a" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-W" />
+			<Add directory="include" />
+			<Add directory="include\.." />
+			<Add directory="lib" />
+			<Add directory="lib\cfl" />
+			<Add directory="lib\chipmunk" />
+			<Add directory="lib\zlib" />
+			<Add directory="lib\guichan" />
+			<Add directory="lib\squirrel" />
+		</Compiler>
+		<Linker>
+			<Add library="mingw32" />
+			<Add library="lib\libsquirrel.a" />
+			<Add library="lib\zdll.lib" />
+			<Add library="lib\xmlParser.lib" />
+			<Add directory="lib" />
+		</Linker>
+		<Unit filename="build\__game.lua">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="build\mgame.log">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="build\stdout.txt">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\API_Base.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\API_HGE.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="include\API_SDL.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+		</Unit>
+		<Unit filename="include\API_SDLAGG.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\ApplicationBase.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\GameAnimation.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\GameEntity.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\GameState.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\GameWorld.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\Graphics.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\Input.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\ResourceManager.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\ScriptVM.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\StateManager.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\System.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\VariableMap.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\main.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\mapnodes.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\utils.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="include\vector.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\Agg2D.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\Agg2D.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_alpha_mask_u8.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_arc.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_arc.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_array.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_arrowhead.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_arrowhead.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_basics.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_bezier_arc.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_bezier_arc.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_bitset_iterator.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_blur.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_bounding_rect.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_bspline.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_bspline.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_clip_liang_barsky.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_color_conv.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_color_conv_rgb16.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_color_conv_rgb8.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_color_gray.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_color_rgba.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_config.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_adaptor_vcgen.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_adaptor_vpgen.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_bspline.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_clip_polygon.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_clip_polyline.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_close_polygon.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_concat.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_contour.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_curve.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_dash.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_gpc.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_marker.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_marker_adaptor.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_segmentator.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_shorten_path.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_smooth_poly1.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_stroke.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_transform.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_conv_unclose_polygon.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_curves.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_curves.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_dda_line.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_ellipse.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_ellipse_bresenham.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_embedded_raster_fonts.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_embedded_raster_fonts.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_font_cache_manager.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_font_freetype.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_gamma_functions.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_gamma_lut.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_glyph_raster_bin.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_gradient_lut.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_gsv_text.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_gsv_text.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_image_accessors.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_image_filters.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_image_filters.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_line_aa_basics.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_line_aa_basics.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_line_profile_aa.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_math.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_math_stroke.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_path_length.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_path_storage.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_path_storage_integer.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_pattern_filters_rgba.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_pixfmt_amask_adaptor.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_pixfmt_gray.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_pixfmt_rgb.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_pixfmt_rgb_packed.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_pixfmt_rgba.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_pixfmt_transposer.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_rasterizer_cells_aa.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_rasterizer_compound_aa.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_rasterizer_outline.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_rasterizer_outline_aa.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_rasterizer_scanline_aa.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_rasterizer_sl_clip.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_renderer_base.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_renderer_markers.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_renderer_mclip.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_renderer_outline_aa.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_renderer_outline_image.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_renderer_primitives.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_renderer_raster_text.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_renderer_scanline.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_rendering_buffer.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_rendering_buffer_dynarow.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_rounded_rect.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_rounded_rect.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_scanline_bin.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_scanline_boolean_algebra.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_scanline_p.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_scanline_storage_aa.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_scanline_storage_bin.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_scanline_u.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_shorten_path.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_simul_eq.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_allocator.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_converter.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_gouraud.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_gouraud_gray.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_gouraud_rgba.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_gradient.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_gradient_alpha.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_image_filter.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_image_filter_gray.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_image_filter_rgb.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_image_filter_rgba.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_interpolator_adaptor.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_interpolator_linear.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_interpolator_persp.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_interpolator_trans.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_pattern_gray.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_pattern_rgb.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_pattern_rgba.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_solid.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_span_subdiv_adaptor.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_sqrt_tables.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_trans_affine.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_trans_affine.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_trans_bilinear.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_trans_double_path.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_trans_double_path.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_trans_perspective.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_trans_single_path.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_trans_single_path.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_trans_viewport.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_trans_warp_magnifier.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_trans_warp_magnifier.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vcgen_bspline.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vcgen_bspline.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vcgen_contour.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vcgen_contour.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vcgen_dash.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vcgen_dash.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vcgen_markers_term.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vcgen_markers_term.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vcgen_smooth_poly1.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vcgen_smooth_poly1.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vcgen_stroke.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vcgen_stroke.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vcgen_vertex_sequence.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vertex_sequence.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vpgen_clip_polygon.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vpgen_clip_polygon.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vpgen_clip_polyline.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vpgen_clip_polyline.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vpgen_segmentator.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\agg2d\agg_vpgen_segmentator.h">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFL.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFL.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFLDirectoryEntry.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFLDirectoryEntry.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFLEnumerator.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFLEnums.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFLLibrary.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFLLibrary.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFLMaker.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFLMaker.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFLResource.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFLResource.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFLResourceFilter.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFLResourceFilter.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFL_delta16.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFL_delta32.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFL_delta8.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFL_none.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\cfl\CFL_zlib.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\hge\hge.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="lib\hge\hge_impl.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="lib\hge\hgeanim.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="lib\hge\hgecolor.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="lib\hge\hgedistort.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="lib\hge\hgefont.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="lib\hge\hgegui.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="lib\hge\hgeguictrls.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="lib\hge\hgeparticle.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="lib\hge\hgerect.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="lib\hge\hgeresource.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="lib\hge\hgesprite.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="lib\hge\hgestrings.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="lib\hge\hgevector.h">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="lib\sge\sge.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\sge\sge_blib.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\sge\sge_bm_text.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\sge\sge_collision.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\sge\sge_config.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\sge\sge_internal.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\sge\sge_misc.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\sge\sge_primitives.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\sge\sge_rotation.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\sge\sge_shape.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\sge\sge_surface.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\sge\sge_textpp.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\sge\sge_tt_text.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdaux.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdaux.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdblob.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdblob.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdblobimpl.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdio.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdio.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdmath.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdmath.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdrex.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdstream.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdstream.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdstring.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdstring.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdsystem.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\sqstdsystem.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="lib\squirrel\squirrel.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="mgame_config.h">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\API_Base.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\API_HGE.cpp">
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+		</Unit>
+		<Unit filename="src\API_SDL.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+		</Unit>
+		<Unit filename="src\API_SDLAGG.cpp">
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\ApplicationBase.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\GameAnimation.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\GameEntity.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\GameWorld.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\Graphics.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\Input.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\ResourceManager.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\ScriptVM.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\StateManager.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\System.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\VariableMap.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\gfx_utils.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\main.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\utils.cpp">
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Unit filename="src\vector.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="Debug - SDL" />
+			<Option target="Release - SDL" />
+			<Option target="Debug - HGE" />
+			<Option target="Release - HGE" />
+			<Option target="Debug - SDL/AGG2D" />
+			<Option target="Release - SDL/AGG2D" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,4 +1,4 @@
-#include "SDL.h"
+//#include "SDL.h"
 
 // Color macros from SDL_blit.h
 #define RGB_FROM_PIXEL(pixel, fmt, r, g, b)				\
